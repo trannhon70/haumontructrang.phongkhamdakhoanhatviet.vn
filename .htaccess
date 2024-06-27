@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Rewrite for index.html
+RewriteRule ^index\.html$ index.php [L]
+
+# Rewrite for tin-tuc-y-khoa.html
+RewriteRule ^tin-tuc-y-khoa\.html$ tin-tuc-y-khoa.php [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)\.html$ tin-tuc-y-khoa.php?tintuc=$1 [L]
+
+# Rewrite for danh-muc/khoa/benh.html
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)\.html$ danh-muc.php?khoa=$1&benh=$2 [L]
+
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)\.html$ danh-muc.php?khoa=$1&baiviet=$2 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)\.html$ danh-muc.php?khoa=$1&benh=$2&page=$3&bai-viet=$4 [L]
+
+
+
