@@ -25,7 +25,7 @@ $dataFake = array(
     array(
         'title' => 'PHƯƠNG CHÂM PHÒNG KHÁM', 
         // 'image' => '/images/icons/icon_nam_khoa2.webp', 
-        'text' => 'Phòng khám bệnh xã hội JV Nhật Việt chuyên khám và hỗ trợ điều trị các bệnh thường gặp như trĩ, rò hậu môn, apxe hậu môn, nứt kẻ hậu môn,… Hiện nay ngày càng nhiều người mắc các Hậu Môn - Trực Tràng, nguyên nhân chủ yếu là do lối sống tình dục không an toàn. Chính vì vậy bệnh nhân cần chủ động đi khám tại các phòng khám Hậu Môn - Trực Tràng uy tín để nhanh chóng phát hiện và hỗ trợ điều trị sớm.'),
+        'text' => 'Khoa Hậu Môn - Trực Tràng Phòng Khám JV Nhật Việt chuyên khám và hỗ trợ điều trị các bệnh thường gặp như trĩ, rò hậu môn, apxe hậu môn, nứt kẻ hậu môn,… Hiện nay ngày càng nhiều người mắc các Hậu Môn - Trực Tràng. Chính vì vậy bệnh nhân cần chủ động đi khám tại các cơ sở uy tín để nhanh chóng phát hiện và hỗ trợ điều trị sớm.'),
     // array('title' => 'DA LIỄU', 'image' => '/images/icons/icon_da_lieu2.webp', 'text' => 'Chuyên khoa Da liễu Phòng khám Đa khoa Nhật Việt là đơn vị đảm nhận chẩn đoán và điều trị các bệnh lý thuộc chuyên ngành Da liễu.'),
     // array('title' => 'BỆNH XÃ HỘI', 'image' => '/images/icons/icon_benh_xh2.webp', 'text' => 'Đa khoa Nhật Việt là một trong những địa chỉ thăm khám, xét nghiệm và điều trị bệnh xã hội uy tín tại TPHCM được người dân thành phố và khu vực tin chọn.'),
     // array('title' => 'HẬU MÔN - TRỰC TRÀNG', 'image' => '/images/icons/icon_hm_tt2.webp', 'text' => 'Khoa Hậu môn – Trực tràng Phòng khám Đa khoa Nhật Việt chuyên cung cấp dịch vụ khám chữa toàn diện các bệnh lý hậu môn – trực tràng uy tín.'),
