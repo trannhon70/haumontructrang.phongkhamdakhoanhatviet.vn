@@ -19,7 +19,7 @@ include_once($filepath . '/../helpers/format.php');
       //thêm danh mục 
       public function getAllKhoa(){
 
-        $query = "SELECT * FROM `admin_khoa` WHERE 1";
+        $query = "SELECT * FROM `admin_khoa` WHERE id = 4 ";
         $result = $this->db->select($query);
         return $result;
         

@@ -18,7 +18,7 @@ include_once($filepath . '/../helpers/format.php');
 
       //thêm danh mục 
       public function getByIdKhoa(){
-        $query = "SELECT * FROM admin_benh WHERE 1";
+        $query = "SELECT * FROM admin_benh WHERE id_khoa = 4";
         $result = $this->db->select($query);
         return $result;
         
