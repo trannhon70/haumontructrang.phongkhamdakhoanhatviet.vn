@@ -103,7 +103,7 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
 
         .dropdown_menu_body {
             border-top: 4px solid #edefef;
-            background-color: #3c7b8f;
+            background-color: #0DCAF3;
             color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 15px;
@@ -119,7 +119,7 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
         }
 
         .dropdown_menu_body_ul_li {
-            border-bottom: 1px solid #00D8D8;
+            border-bottom: 1px solid white;
             align-items: center;
             padding: 2px 0px;
             width: 49.3%;
@@ -279,16 +279,16 @@ $sessionkhoa = Session::get('khoa');
                 </div>
             </div>
         </div>
-        <div style="background-color: #166B85;">
+        <div style="background-color: #0DCAF3;">
 
-            <div style="background-color: #166B85;" class="container header_bottom">
+            <div style="background-color: #0DCAF3;" class="container header_bottom">
                 <a href="<?php echo $local ?>/index.html" class="header_bottom_icon">
                     <img height="40px" width="45px" src="<?php echo $local ?>/images/icons/icon_home.webp" alt="...">
                 </a>
                 <div class="header_bottom_gt"> <a class="header_bottom_gt_a" target="_blank" href="https://haumontructrang.phongkhamdakhoanhatviet.vn/phong-kham-da-nhat-viet-phong-kham-da-khoa-uy-tin-tphcm-7.html">Giới thiệu</a></div>
                 <div class="header_bottom_dm">
 
-                    <a class="header_bottom_gt_a" href="#">bệnh xã hội</a>
+                    <a class="header_bottom_gt_a" href="#">hậu môn - trực tràng</a>
                     <div class="dropdown_menu">
                         <div style="height: 10px;"></div>
                         <div class="dropdown_menu_body">
@@ -310,18 +310,18 @@ $sessionkhoa = Session::get('khoa');
                                     <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?> </a></li>
                                 <?php endforeach; ?>
                             </ul> -->
-                            <ul class="dropdown_menu_body_ul">
-                                <!-- <h5 class="dropdown_menu_body_ul_li_h5">bệnh xã hội</h5> -->
+                            <!-- <ul class="dropdown_menu_body_ul">
+                                <h5 class="dropdown_menu_body_ul_li_h5">bệnh xã hội</h5>
                                 <?php foreach ($MenuBXH as $value) : $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
                                     <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?> </a></li>
                                 <?php endforeach; ?>
-                            </ul>
-                                <!-- <ul class="dropdown_menu_body_ul">
-                                <h5 class="dropdown_menu_body_ul_li_h5">hậu môn - trực tràng</h5>
+                            </ul> -->
+                                <ul class="dropdown_menu_body_ul">
+                                <!-- <h5 class="dropdown_menu_body_ul_li_h5">hậu môn - trực tràng</h5> -->
                                 <?php foreach ($MenuHM as $value) : $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
                                     <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?></a></li>
                                 <?php endforeach; ?>
-                            </ul> -->
+                            </ul> 
 
                         </div>
 

@@ -13,14 +13,14 @@
         z-index: 700;
         /* position: fixed; */
         border-radius: 40px;
-        border: 3px solid #166B85;
+        border: 3px solid #0DCAF3;
         padding: 15px 40px;
     }
 
     .form-chat-title {
         font-size: 40px;
         font-weight: 700;
-        color: #166B85;
+        color: #0DCAF3;
         text-align: center;
         text-transform: uppercase;
     }
@@ -39,21 +39,21 @@
         padding: 5px 20px;
         font-weight: 600;
         color: #999;
-        border: 2px solid #166B85;
+        border: 2px solid #0DCAF3;
         font-style: italic;
     }
 
     .form-chat-input input:focus {
-        border: 3px solid #166B85;
-        border-color: #166B85;
+        border: 3px solid #0DCAF3;
+        border-color: #0DCAF3;
     }
 
     .form-chat-input-button {
         margin-top: 15px;
         width: 80%;
         border-radius: 25px;
-        background-color: #166B85;
-        background-image: linear-gradient(to right, #166B85, #209dc3);
+        background-color: #0DCAF3;
+        background-image: linear-gradient(to right, #0DCAF3, #209dc3);
         color: white;
         font-size: 36px;
         font-weight: 700;

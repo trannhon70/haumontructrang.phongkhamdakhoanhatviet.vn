@@ -46,7 +46,7 @@ if (isset($path_parts[2])) {
         width: 200px;
 
         border: 2px solid transparent;
-        border-color: #067579;
+        border-color: #0DCAF3;
         border-image-slice: 1;
         border-radius: 20px;
     }

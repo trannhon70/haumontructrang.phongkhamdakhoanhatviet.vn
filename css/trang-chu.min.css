@@ -55,8 +55,8 @@
 .hr{
     height: 3px;
     width: 100%;
-    background-color: #276CE8; 
-    background-image: linear-gradient(to right, #166B85 , #276CE8);
+    background-color: #02C7F2; 
+    background-image: linear-gradient(to right, #02C7F2 , #B2FBFC);
     margin: 25px 0px 50px 0px;
 }
 
@@ -68,7 +68,7 @@
     font-size: 40px;
     line-height: 40px;
     font-weight: 700;
-    color: #166B85;
+    color: #208CAF;
     text-transform: uppercase;
 }
 
@@ -88,8 +88,8 @@
     font-weight: 700;
     text-transform: uppercase;
     line-height: 53px;
-    background-color: #166B85; 
-    background-image: linear-gradient(to right, #166B85 , #27B9E8);
+    background-color: #02C7F2; 
+    background-image: linear-gradient(to right, #02C7F2 , #B5FBFC);
     width: 100%;
     color: white;
     border: none;
@@ -154,7 +154,7 @@
 .experienced_body_left_center_button{
     margin-top: 30px;
     
-    background-color: #27BAE9;
+    background-color: #208CAF;
     color: white;
     font-size: 20px;
     font-weight: 700;
@@ -236,7 +236,7 @@
     font-size: 25px;
     line-height: 45px;
     text-align: center;
-    color: #166B85;
+    color: #208CAF;
     text-transform: uppercase;
 
 }
@@ -416,7 +416,7 @@
 .tintuc{
     font-weight: 700;
     font-size: 35px;
-    color: #166B85;
+    color: #02C7F2;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -478,7 +478,7 @@
   .feedback_row_right_title{
     font-size: 23px;
     font-weight: 700;
-    color: #166B85;
+    color: #02C7F2;
     text-transform: uppercase;
   }
 
@@ -486,8 +486,8 @@
     margin-left: 0px;
     width: 350px;
     border-bottom: 3px solid transparent;
-    border-color: #166B85;
-    border-image: linear-gradient(to right, #166B85, #27B9E8);
+    border-color: #02C7F2;
+    border-image: linear-gradient(to right, #02C7F2, #CAFFFF);
     border-image-slice: 1
   }
 
@@ -495,8 +495,8 @@
     margin-left: 0px;
     width: 350px;
     border-bottom: 3px solid transparent;
-    border-color: #166B85;
-    border-image: linear-gradient(to right, #166B85, #27B9E8);
+    border-color: #02C7F2;
+    border-image: linear-gradient(to right, #02C7F2, #CAFFFF);
     border-image-slice: 1
   }
   .feedback_row_right_text{
@@ -511,7 +511,7 @@
   .feedback_row_right_name{
     font-size: 22px;
     font-weight: 700;
-    color: #166B85;
+    color: #02C7F2;
     line-height: 30px;
   }
 
@@ -544,11 +544,11 @@
     font-size: 24px;
     font-weight: 700;
     line-height: 45px;
-    color: #008DBA;
+    color: #208CAF;
     text-transform: uppercase;
     border-bottom: 4px solid transparent;
-    border-color: #166B85;
-    border-image: linear-gradient(to right, #166B85, #27B9E8);
+    border-color: #0DCAF3;
+    border-image: linear-gradient(to right, #0DCAF3, #9FFBFE);
     border-image-slice: 1
 }
 
@@ -556,11 +556,11 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 30px;
-    color: #008DBA;
+    color: #0DCAF3;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
-    border-color: #008DBA;
-    border-image: linear-gradient(to right, #008DBA, #008DBA);
+    border-color: #0DCAF3;
+    border-image: linear-gradient(to right, #0DCAF3, #008DBA);
     border-image-slice: 1;
     margin-top: 10px;
 }
@@ -571,7 +571,7 @@
     border-radius: 50px;
     width: 100%;
     min-height: 200px;
-    background-image: linear-gradient(to right, #008DBA, #27BAE9);
+    background-image: linear-gradient(to right, #0DCAF3, #9EFCFE);
 }
 
 .health_row_col_box_title{
@@ -579,7 +579,7 @@
     font-size: 26px;
     text-align: center;
     line-height: 32px;
-    color: white;
+    color: #007BA3;
     text-transform: uppercase;
 }
 
@@ -597,7 +597,7 @@
     padding: 5px 20px;
     font-weight: 600;
     color: #999;
-    border: 2px solid #0592BF;
+    border: 2px solid #0DCAF3;
     font-style: italic;
 }
 
@@ -607,9 +607,9 @@
 }
 
 .health_row_col_box_input input:focus {
-    border: 0px solid rgba(1, 150, 154, 1); /* Màu border khi focus */
+    border: 0px solid #0DCAF3; /* Màu border khi focus */
     outline: 0px auto -webkit-focus-ring-color;
-    border-color: rgba(1, 150, 154, 1);
+    border-color: #0DCAF3;
 }
 
 .health_row_col_box_button{
@@ -643,11 +643,11 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 35px;
-    color: #008DBA;
+    color: #208CAF;
     text-transform: uppercase;
     border-bottom: 3px solid transparent;
-    border-color: #008DBA;
-    border-image: linear-gradient(to right, #008DBA, #008DBA);
+    border-color: #208CAF;
+    border-image: linear-gradient(to right, #208CAF, #008DBA);
     margin-top: 10px;
     /* border-image-slice: 1; */
 }
@@ -662,8 +662,8 @@
     max-width: 158px !important;
     border-radius: 20px;
     border: 2px solid transparent;
-    border-color: #067579;
-    border-image: linear-gradient(to right, #067579, #0f999e);
+    border-color: #0DCAF3;
+    border-image: linear-gradient(to right, #0DCAF3, #0f999e);
     border-image-slice: 1;
 }
 

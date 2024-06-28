@@ -2,7 +2,7 @@
 include 'inc/header.php';
 
 $danhSachBaiViet = $bai_viet->getDanhSachBaiVietNew();
-$danhSachBaiVietTheoKhoa = $bai_viet->getAllDanhSachBaiVietNew('benh-xa-hoi');
+$danhSachBaiVietTheoKhoa = $bai_viet->getAllDanhSachBaiVietNew('hau-mon-truc-trang');
 $tin_tuc_all_news = $tin_tuc->getAllLimitTinTuc();
 ?>
 
@@ -351,7 +351,7 @@ $dataFake = array(
         ?>
                 <swiper-slide>
                     <a style="text-decoration: none;" href="<?php echo $local ?>/<?php echo $result['slug'] ?>.html">
-                        <div style="border: 3px solid #01969A; border-radius: 50px ">
+                        <div style="border: 3px solid #02C7F2; border-radius: 50px ">
                             <img style="border-radius: 46px; object-fit: fill; " width="100%" height="240px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
                         </div>
                         <div class="mySwiper_title">
