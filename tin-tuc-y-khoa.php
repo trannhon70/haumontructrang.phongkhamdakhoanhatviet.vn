@@ -514,7 +514,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
                     imgElements[i].src = '<?php echo $local ?>/admin/ckeditor/uploads/' + fileName;
                 }
                 //hiển thị css img chatbox
-                if (imgElements[i].src.startsWith('https://benhxahoi.phongkhamdakhoanhatviet.vn/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') == true) {
+                if (imgElements[i].src.startsWith('https://haumontructrang.phongkhamdakhoanhatviet.vn/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') == true) {
                     imgElements[i].style.borderRadius = '8px';
                     let divWrapper = document.createElement('p');
                     divWrapper.className = 'glow-on-hover';

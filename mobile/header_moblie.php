@@ -44,7 +44,7 @@
         <nav>
             <ul class="sidebar_mobile">
                 <li>
-                    <a href="https://benhxahoi.phongkhamdakhoanhatviet.vn/phong-kham-da-nhat-viet-phong-kham-da-khoa-uy-tin-tphcm-7.html">giới thiệu</a>
+                    <a href="https://haumontructrang.phongkhamdakhoanhatviet.vn/phong-kham-da-nhat-viet-phong-kham-da-khoa-uy-tin-tphcm-7.html">giới thiệu</a>
                 </li>
                 <li class="sidebar_mobile_li">
                     <span onclick="showShelectOption()">

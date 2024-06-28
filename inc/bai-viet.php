@@ -153,7 +153,7 @@ Nội dung bài viết cung cấp nhằm mục đích tham khảo thêm kiến t
             }
 
              //hiển thị css img chatbox
-            if (imgElements[i].src.startsWith('https://benhxahoi.phongkhamdakhoanhatviet.vn/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') == true) {
+            if (imgElements[i].src.startsWith('https://haumontructrang.phongkhamdakhoanhatviet.vn/ckfinder/userfiles/images/Chat/Chat-Dakhoa.gif') == true) {
                 imgElements[i].style.borderRadius = '8px';
                 let divWrapper = document.createElement('p');
                 divWrapper.className = 'glow-on-hover';

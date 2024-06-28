@@ -33,8 +33,8 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 
-// $local = '/benhxahoi.phongkhamdakhoanhatviet.vn';
-$local ='https://benhxahoi.phongkhamdakhoanhatviet.vn'
+$local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
+// $local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
 
 
 ?>
@@ -285,7 +285,7 @@ $sessionkhoa = Session::get('khoa');
                 <a href="<?php echo $local ?>/index.html" class="header_bottom_icon">
                     <img height="40px" width="45px" src="<?php echo $local ?>/images/icons/icon_home.webp" alt="...">
                 </a>
-                <div class="header_bottom_gt"> <a class="header_bottom_gt_a" target="_blank" href="https://benhxahoi.phongkhamdakhoanhatviet.vn/phong-kham-da-nhat-viet-phong-kham-da-khoa-uy-tin-tphcm-7.html">Giới thiệu</a></div>
+                <div class="header_bottom_gt"> <a class="header_bottom_gt_a" target="_blank" href="https://haumontructrang.phongkhamdakhoanhatviet.vn/phong-kham-da-nhat-viet-phong-kham-da-khoa-uy-tin-tphcm-7.html">Giới thiệu</a></div>
                 <div class="header_bottom_dm">
 
                     <a class="header_bottom_gt_a" href="#">bệnh xã hội</a>
