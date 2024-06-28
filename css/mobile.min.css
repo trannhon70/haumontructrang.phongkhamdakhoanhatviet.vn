@@ -45,12 +45,12 @@
         width: 83%;
         min-height: 300px;
         border-radius: 15px;
-        border: 2px solid #166B85;
+        border: 2px solid #B5FBFC;
         padding: 10px 10px;
         margin: auto;
     }
     .form-chat-mobile-title{
-        color: #166B85;
+        color: #208CAF;
         font-size: 18px;
         font-weight: 700;
         text-align: center;
@@ -71,20 +71,20 @@
         padding: 5px 10px;
         font-weight: 600;
         color: #999;
-        border: 2px solid #166B85;
+        border: 2px solid #B5FBFC;
         font-style: italic;
     }
 
     .form-chat-mobile-input input:focus {
-        border: 3px solid #166B85;
-        border-color: #166B85;
+        border: 3px solid #B5FBFC;
+        border-color: #B5FBFC;
     }
     .form-chat-mobile-input-button{
         width: 60%;
         border-radius: 8px;
-        background-color: #166B85;
-        background-image: linear-gradient(to right, #166B85, #50e2e7);
-        color: white;
+        background-color: #A1FCFE;
+        background-image: linear-gradient(to right, #A1FCFE, #50e2e7);
+        color: #208CAF;
         font-size: 20px;
         font-weight: 700;
         text-align: center;
@@ -299,8 +299,8 @@
         width: 100%;
     }
     .footer_mobile_call_left_body{
-        background-color: #166B85;
-        background-image: linear-gradient(to right, #166B85, #166B85);
+        background-color: #1f9ec5;
+        background-image: linear-gradient(to right, #1f9ec5, #1f9ec5);
         width: 100%;
         height: 70px;
         text-align: center;
@@ -372,8 +372,8 @@
 
     }
     .footer_mobile_call_right_body{
-        background-color: #166B85;
-        background-image: linear-gradient(to right, #166B85, #166B85);
+        background-color: #1f9ec5;
+        background-image: linear-gradient(to right, #1f9ec5, #1f9ec5);
         width: 100%;
         height: 70px;
         text-align: center;
@@ -452,7 +452,7 @@
     position: relative;
     width: 100%;
     height: 50px;
-    background-image: linear-gradient(to right, #166B85, #166B85);
+    background-image: linear-gradient(to right, #1f9ec5, #1f9ec5);
    border-bottom: 1px solid white;
     
 }
@@ -640,7 +640,7 @@
     height: 100vh;
     width: 280px;
     z-index: 1000;
-    background-color:#166B85;
+    background-color:#0e97b5;
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgb(0,0,0,0.1);
     color: white;
@@ -725,7 +725,7 @@
     width: 100%;
     font-size: 16px;
     font-weight: 700;
-    color: #166B85;
+    color: #0e97b5;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -745,7 +745,7 @@
 .sidebar_mobile_li_ul_li_benh>li{
     width: 100%;
     padding: 3px 10px;
-    border-bottom: 1px solid #166B85;
+    border-bottom: 1px solid #0e97b5;
 }
 
 .sidebar_mobile_li_ul_li_benh>li:hover{
@@ -759,7 +759,7 @@
     width: 100%;
     font-size: 14px;
     font-weight: 600;
-    color: #166B85;
+    color: #0e97b5;
     text-decoration: none;
     text-transform: capitalize;
 }
