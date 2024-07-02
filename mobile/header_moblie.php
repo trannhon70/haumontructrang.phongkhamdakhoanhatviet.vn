@@ -11,8 +11,8 @@
                     <img width="25px" src="<?php echo $local ?>/images/icons/menu_white.webp" alt="">
                 </div>
                 <div onclick="hidenSidebar()" class="header_mobile_row_col_icon_close"><i class="fa fa-times" aria-hidden="true"></i> </div>
-                <input type="text" placeholder="Nhập số điện thoại">
-                <button>xác nhận</button>
+                <input id="sdt_mobile" type="number" placeholder="Nhập số điện thoại">
+                <button onclick="onClickCreatePhone()">xác nhận</button>
             </div>
         </div>
         </div>
@@ -135,4 +135,63 @@
                 showShelectOptionBenh(this);
             });
         });
+    </script>
+
+<script>
+        document.querySelectorAll('.sidebar_mobile_li_ul_li>span').forEach(span => {
+            span.addEventListener('click', function() {
+                showShelectOptionBenh(this);
+            });
+        });
+
+        function formatPhoneNumber(phoneNumber) {
+            let cleaned = ('' + phoneNumber).replace(/\D/g, '');
+            let match = cleaned.match(/^(\d{4})(\d{3})(\d{3})$/);
+            if (match) {
+                return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+            }
+            return null;
+        }
+
+        function onClickCreatePhone() {
+            let sdt = document.getElementById('sdt_mobile').value;
+            if (sdt.trim() !== '') {
+                if (formatPhoneNumber(sdt)) {
+                    let baseUrl = window.location.href;
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "https://phongkhamdakhoanhatviet.vn/api/tu-van/create-phone-tu-van.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            try {
+                                let response = JSON.parse(xhr.responseText);
+                                if (response.status === 'success') {
+                                    toastr.success(response.message);
+                                    document.getElementById('sdt_mobile').value = '';
+                                } else {
+                                    toastr.error(response.message);
+                                }
+                            } catch (e) {
+
+                                toastr.error("Đã xảy ra lỗi trong quá trình xử lý phản hồi từ máy chủ.");
+                            }
+                           
+                        }
+                    };
+
+                    const formData = {
+                        "sdt": sdt,
+                        "url" :baseUrl
+                    }
+
+                    xhr.send(JSON.stringify(formData));
+                } else {
+                    toastr.error("Số điện thoại không hợp lệ!");
+                }
+
+            } else {
+                toastr.error("Số điện thoại không được bỏ trống");
+
+            }
+        }
     </script>

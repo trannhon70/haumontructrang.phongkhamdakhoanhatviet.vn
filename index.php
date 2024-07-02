@@ -32,44 +32,8 @@ $dataFake = array(
 );
 ?>
 
-<div class="form-chat-mobile">
-    <form action="">
-        <div class="form-chat-mobile-title">Đặt lịch khám</div>
-        <div class="form-chat-mobile-input">
-            <input type="text" placeholder="Họ tên">
-        </div>
-        <div class="form-chat-mobile-input">
-            <input type="text" placeholder="Ngày tháng năm sinh">
-        </div>
-        <div class="form-chat-mobile-input">
-            <input type="text" placeholder="Số điện thoại">
-        </div>
-        <div class="form-chat-mobile-input">
-            <input type="text" placeholder="Mô tả triệu chứng">
-        </div>
-        <div class="row">
-                <div class="col-6">
-                    <div class="form-group form-chat-mobile-input">
-                        <div class="datepicker date input-group">
-                            <input type="text" placeholder="Ngày khám" class="form-control" id="fecha1">
-                            <div style="height: 35px; margin-top: 0px; " class="input-group-append">
-                                <span style="border-bottom: 2px;" class="input-group-text"><i class="fa fa-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-chat-mobile-input">
-                        <input type="text" placeholder="Giờ khám">
-                    </div>
-                </div>
-            </div>
-            <div style="display: flex; align-items: center;justify-content: center; ">
-                <button class="form-chat-mobile-input-button">gửi</button>
+<?php include("mobile/form_dat_lich_kham.php") ?>
 
-            </div>
-    </form>
-</div>
 
 <section class="container" id="we_bring">
     <div class=" we_bring_body">
@@ -219,8 +183,8 @@ $dataFake = array(
         <div class="advise_row_left col-5 col-sm-5">nhận tư vấn sức khỏe từ
             các chuyên gia của chúng tôi</div>
         <div class="advise_row_left_right col-7 col-sm-7">
-            <input class="advise_row_left_right_input" type="text" placeholder="Nhập số điện thoại">
-            <button class="advise_row_left_right_bottom">gửi</button>
+            <input id="sdt_pc" class="advise_row_left_right_input" type="number" placeholder="Nhập số điện thoại">
+            <button onclick="onClickCreatePhonePC()" class="advise_row_left_right_bottom">gửi</button>
         </div>
     </div>
 </section>
@@ -399,18 +363,59 @@ if ($tin_tuc_all_news) {
     </swiper-container>
 </section>
 
-<!-- <form action="" method="POST">
-    <div class="row mb-2">
-        <div class="col-12 col-lg-6">
-            <input id="name" class="form-control col-12 " type="text" name="name" placeholder="tên">
-        </div>
-    </div>
 
-    <div class="button_register">
-        <button  type="submit" class="bg-success " name="submit">Create</button>
-       
-    </div>
-</form>
-<button onclick="onClickToast()" id="button" name="submit" class="bg-success " >Save AJAX</button> -->
+<script>
+    function formatPhoneNumber(phoneNumber) {
+            let cleaned = ('' + phoneNumber).replace(/\D/g, '');
+            let match = cleaned.match(/^(\d{4})(\d{3})(\d{3})$/);
+            if (match) {
+                return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+            }
+            return null;
+        }
+
+        function onClickCreatePhonePC() {
+            let sdt = document.getElementById('sdt_pc').value;
+            if (sdt.trim() !== '') {
+                if (formatPhoneNumber(sdt)) {
+                  
+                    let baseUrl = window.location.href;
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "https://phongkhamdakhoanhatviet.vn/api/tu-van/create-phone-tu-van.php", true);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            try {
+                                let response = JSON.parse(xhr.responseText);
+                                if (response.status === 'success') {
+                                    toastr.success(response.message);
+                                    document.getElementById('sdt_pc').value = '';
+                                } else {
+                                    toastr.error(response.message);
+                                }
+                            } catch (e) {
+
+                                toastr.error("Đã xảy ra lỗi trong quá trình xử lý phản hồi từ máy chủ.");
+                            }
+                           
+                        }
+                    };
+
+                    const formData = {
+                        'sdt': sdt,
+                        "url": baseUrl
+                    }
+
+                    xhr.send(JSON.stringify(formData));
+                } else {
+                    toastr.error("Số điện thoại không hợp lệ!");
+                }
+
+            } else {
+                toastr.error("Số điện thoại không được bỏ trống");
+
+            }
+        }
+</script>
 
 <?php include 'inc/footer.php'; ?>

@@ -274,37 +274,7 @@ if (isset($path_parts[2])) {
             }
 
             ?>
-            <div action="" method="post" class="health_row_col_box">
-                <form action="" method="post">
-                    <div class="health_row_col_box_title">Tư vấn trực tuyến</div>
-                    <div class="health_row_col_box_input">
-                        <input type="text" placeholder="Họ tên">
-                    </div>
-
-                    <!-- <div class="form-group health_row_col_box_input">
-                        <div class="datepicker date input-group">
-                            <input type="text" placeholder="Ngày sinh" class="form-control" id="fecha1">
-                            <div style="height: 40px;" class="input-group-append">
-                                <span style="border-bottom: 2px solid transparent;" class="input-group-text"><i class="fa fa-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="health_row_col_box_input">
-                        <input type="number" placeholder="Ngày tháng năm sinh">
-                    </div>
-                    <div class="health_row_col_box_input">
-                        <input type="number" placeholder="Số điện thoại">
-                    </div>
-                    <div class="health_row_col_box_input">
-                        <input type="text" placeholder="Mô tả triệu chứng của bạn">
-                    </div>
-
-                    <div style="display: flex; align-items: center;justify-content: center; ">
-                        <button class="health_row_col_box_button">gửi</button>
-
-                    </div>
-                </form>
-            </div>
+            <?php include('inc/form-tu-van.php');  ?>
             <a href="" class="w-100 mt-3">
                 <img class="w-100 mt-3" style="border-radius: 10px;" src="<?php echo $local ?>/images/banner/banner_khuyen_mai.webp " alt="...">
             </a>
