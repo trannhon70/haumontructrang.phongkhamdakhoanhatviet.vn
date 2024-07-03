@@ -1,6 +1,7 @@
 
 
 </div>
+</div>
 <script src="../js/toastr.min.js"></script>
 <script>
 CKEDITOR.replace('content', {

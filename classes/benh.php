@@ -23,7 +23,12 @@ include_once($filepath . '/../helpers/format.php');
         return $result;
         
       }
-      
+      public function getAllDanhSachBenh(){
+        $query = "SELECT * FROM admin_benh WHERE 1";
+        $result = $this->db->select($query);
+        return $result;
+        
+      }
       
   }
   

@@ -128,22 +128,40 @@ class news
         }
     }
 
-    public function getPaginationTinTuc($limit, $offset)
+    public function getPaginationTinTuc($limit, $offset,$tieuDe)
     {
-        $query = "SELECT tintuc.*, user.user_name, user.email , user.full_name
-          FROM admin_tintuc tintuc 
-          JOIN admin_user user ON tintuc.user_id = user.id
-          ORDER BY tintuc.id DESC LIMIT $limit OFFSET $offset";
+        $tieuDe = mysqli_real_escape_string($this->db->link, $tieuDe);
+        if($tieuDe !== ''){
+            $query = "SELECT tintuc.*, user.user_name, user.email , user.full_name
+            FROM admin_tintuc tintuc 
+            JOIN admin_user user ON tintuc.user_id = user.id
+            WHERE tintuc.tieu_de LIKE '%$tieuDe%'
+            ORDER BY tintuc.id DESC LIMIT $limit OFFSET $offset";
+        } else {
+            $query = "SELECT tintuc.*, user.user_name, user.email , user.full_name
+            FROM admin_tintuc tintuc 
+            JOIN admin_user user ON tintuc.user_id = user.id
+            
+            ORDER BY tintuc.id DESC LIMIT $limit OFFSET $offset";
+        }
+       
         $result = $this->db->select($query);
         return $result;
     }
 
-    public function getTotalCountTinTuc()
+    public function getTotalCountTinTuc($tieuDe)
     {
-      $query = "SELECT COUNT(*) AS total FROM admin_tintuc ";
-      $result = $this->db->select($query);
-      $row = $result->fetch_assoc();
-      return $row['total'];
+        $tieuDe = mysqli_real_escape_string($this->db->link, $tieuDe);
+        
+        if ($tieuDe !== "") {
+            $query = "SELECT COUNT(*) AS total FROM admin_tintuc WHERE tieu_de LIKE '%$tieuDe%' ";
+        } else {
+            $query = "SELECT COUNT(*) AS total FROM admin_tintuc";
+        }
+    
+        $result = $this->db->select($query);
+        $row = $result->fetch_assoc();
+        return $row['total'];
     }
 
     public function delete_tituc($id)

@@ -124,9 +124,18 @@ class post
     }
   }
 
-  public function getTotalCount()
+  public function getTotalCount($tieuDe,$IdBenh)
   {
-    $query = "SELECT COUNT(*) AS total FROM admin_baiviet ";
+    $tieuDe = mysqli_real_escape_string($this->db->link, $tieuDe);
+    if ($tieuDe !== '' || $IdBenh !== '') {
+      $query = "SELECT COUNT(*) AS total FROM admin_baiviet WHERE tieu_de LIKE '%$tieuDe%' ";
+      if (!empty($IdBenh)) {
+        $query .= " AND id_benh = '$IdBenh'";
+      }
+    } else {
+      $query = "SELECT COUNT(*) AS total FROM admin_baiviet ";
+    }
+
     $result = $this->db->select($query);
     $row = $result->fetch_assoc();
     return $row['total'];
@@ -302,8 +311,27 @@ $query = "SELECT COUNT(*) AS total FROM admin_baiviet WHERE id_benh = ' $id_benh
     }
   }
 
-  public function getPaginationTinTuc($limit, $offset)
+  public function getPaginationTinTuc($limit, $offset, $tieuDe, $IdBenh)
   {
+    $tieuDe = mysqli_real_escape_string($this->db->link, $tieuDe);
+    $IdBenh = mysqli_real_escape_string($this->db->link, $IdBenh);
+    if ($tieuDe !== '' || $IdBenh !== '') {
+      $query = "SELECT baiviet.*, user.user_name, user.email , 
+      user.full_name,
+      benh.name AS ten_benh,
+        benh.id_khoa AS id_benh_khoa, 
+        khoa.slug AS slug_khoa 
+        FROM admin_baiviet baiviet 
+        JOIN admin_user user ON baiviet.user_id = user.id
+        JOIN admin_benh benh ON baiviet.id_benh = benh.id
+       JOIN admin_khoa khoa ON benh.id_khoa = khoa.id
+       WHERE baiviet.tieu_de LIKE '%$tieuDe%'";
+
+      if (!empty($IdBenh)) {
+        $query .= " AND benh.id = '$IdBenh'";
+      }
+      $query .= " ORDER BY baiviet.id DESC LIMIT $limit OFFSET $offset";
+    } else {
       $query = "SELECT baiviet.*, user.user_name, user.email , 
       user.full_name,
       benh.name AS ten_benh,
@@ -314,8 +342,10 @@ $query = "SELECT COUNT(*) AS total FROM admin_baiviet WHERE id_benh = ' $id_benh
         JOIN admin_benh benh ON baiviet.id_benh = benh.id
        JOIN admin_khoa khoa ON benh.id_khoa = khoa.id
         ORDER BY baiviet.id DESC LIMIT $limit OFFSET $offset";
-      $result = $this->db->select($query);
-      return $result;
+    }
+
+    $result = $this->db->select($query);
+    return $result;
   }
 }
 

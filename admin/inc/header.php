@@ -44,6 +44,9 @@ header("Cache-Control: max-age=2592000");
 </head>
 
 <style>
+    body {
+        overflow: hidden;
+    }
     .btn-icon {
         font-size: 25px;
         cursor: pointer;
@@ -80,7 +83,7 @@ header("Cache-Control: max-age=2592000");
                 </li> -->
                 <li class="sidebar-item">
                     <a href="" class="sidebar-link has-dropdown collapsed" data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
-                        <i class="fa-solid fa-bars"></i>
+                    <i class="fa-brands fa-artstation"></i>
                         <span>QL bài viết</span>
                     </a>
                     <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
@@ -141,16 +144,36 @@ header("Cache-Control: max-age=2592000");
                     </a>
                 </li> -->
             </ul>
-            <div class="sidebar-footer">
+            <!-- <div class="sidebar-footer">
 
                 <a href="?action=logout" class="sidebar-link">
                     <i class="lni lni-exit"></i>
                     <span>logout</span>
                 </a>
-            </div>
+            </div> -->
         </aside>
 
-        <div class="main p-3">
-            <div class="btn-button " id="toggle-btn ">
-                <i class="fa-solid fa-bars btn-icon"></i>
+        <div class="main ">
+            <div style="padding: 0px 1rem; background-color: #c18b1f;height: 50px;display: flex;align-items: center;justify-content: space-between;">
+                <span class="btn-button " id="toggle-btn ">
+                    <i style="color: white;" class="fa-solid fa-bars btn-icon"></i>
+                </span>
+                <div>
+                    <span style="color:white; font-size: 18px; padding-right: 10px; ">hello <?php echo Session::get('full_name') ?> </span>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i style="color: white; font-size: 25px; margin-right: 10px; " class="fa-solid fa-user-secret"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
+                            
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="?action=logout"><i class="lni lni-exit"></i> Đăng xuẩt</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+            <div style="height: 910px; overflow: auto; display: block; min-height: 500px; max-height: 1000px; " class="p-3">
