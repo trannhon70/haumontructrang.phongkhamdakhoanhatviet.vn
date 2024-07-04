@@ -2,6 +2,9 @@
 ob_start();
 include 'inc/header.php';
 include '../classes/tin_tuc.php';
+
+if (Session::get('role') === '1' || Session::get('role') === '2') {
+
 $tin_tuc = new news();
 ?>
 
@@ -161,3 +164,7 @@ $total_pages = ceil($total_articles / $limit);
 </script>
 
 <?php include 'inc/footer.php'; ?>
+
+<?php } else { ?>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 30px; text-transform: uppercase; font-weight: 600; height: 90vh; color: red; ">Trang này không tồn tại</div>
+<?php } ?>

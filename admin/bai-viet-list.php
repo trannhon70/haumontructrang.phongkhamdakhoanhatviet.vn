@@ -4,6 +4,9 @@ include 'inc/header.php';
 include '../classes/khoa.php';
 include '../classes/benh.php';
 include '../classes/bai_viet.php';
+
+if (Session::get('role') === '1' || Session::get('role') === '2') {
+
 $khoa = new khoa();
 $benh = new Benh();
 $bai_viet = new post();
@@ -180,3 +183,7 @@ $total_pages = ceil($total_articles / $limit);
 </script>
 
 ﻿<?php include 'inc/footer.php'; ?>
+
+<?php } else { ?>
+    <div style="display: flex; align-items: center; justify-content: center; font-size: 30px; text-transform: uppercase; font-weight: 600; height: 90vh; color: red; ">Trang này không tồn tại</div>
+<?php } ?>
