@@ -41,7 +41,7 @@
                     Session::set('user_name', $value['user_name']);
                     Session::set('full_name', $value['full_name']);
                     Session::set('email', $value['email']);
-                    Session::set('role', $value['role']);
+                    Session::set('role', $value['role_id']);
 
                     
                     header('Location:index.php');
