@@ -16,22 +16,7 @@ $db = new Database();
 header('Content-Type: application/json'); // Đảm bảo phản hồi dưới dạng JSON
 $data = json_decode(file_get_contents("php://input"), true);
 
-function generateUniqueCode($db)
-{
-    do {
-        $time = microtime(true);
-        $time = str_replace('.', '', $time);
-        $hash = sha1($time);
-        $uniqueCode = substr($hash, 0, 8);
 
-        // Kiểm tra xem mã này đã tồn tại trong cơ sở dữ liệu chưa
-        $check_query = "SELECT COUNT(*) AS count FROM admin_user WHERE ma_user = '$uniqueCode'";
-        $check_result = $db->select($check_query);
-        $row = $check_result->fetch_assoc();
-    } while ($row['count'] > 0);
-
-    return 'PK' . $uniqueCode;
-}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($data)) {
     // Xử lý và chuẩn bị dữ liệu
@@ -40,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($data)) {
     $full_name = isset($data['full_name']) ? htmlspecialchars(strip_tags($data['full_name'])) : '';
     $email = isset($data['email']) ? htmlspecialchars(strip_tags($data['email'])) : '';
     $role_id = isset($data['role_id']) ? htmlspecialchars(strip_tags($data['role_id'])) : '';
-    $ma_user = generateUniqueCode($db);
+    $ma_user = isset($data['ma_user']) ? htmlspecialchars(strip_tags($data['ma_user'])) : '';
     $created_at = $fm->created_at();
     $formatted_date = date('Y-m-d', strtotime($created_at));
 
@@ -75,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($data)) {
         $result = $db->insert($sql);
 
         if ($result) {
-            echo json_encode(['status' => 'success', 'message' => 'Tài khoản đã được tạo thành công https://haumontructrang.phongkhamdakhoanhatviet.vn']);
+            echo json_encode(['status' => 'success', 'message' => 'Tài khoản đã được tạo thành công ở trang https://haumontructrang.phongkhamdakhoanhatviet.vn']);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Lỗi khi lưu dữ liệu']);
         }
