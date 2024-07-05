@@ -14,6 +14,7 @@ include_once 'classes/brand.php';
 include_once 'classes/user.php';
 include_once 'classes/bai_viet.php';
 include_once 'classes/tin_tuc.php';
+include_once 'classes/benh.php';
 
 spl_autoload_register(function ($className) {
     include_once "classes/" . $className . ".php";
@@ -25,6 +26,7 @@ $brand = new brand();
 $user = new users();
 $bai_viet = new post();
 $tin_tuc = new news();
+$benhs = new Benh();
 
 ?>
 <?php
@@ -176,6 +178,8 @@ $MenuNamkhoa = array(
 
 );
 
+
+
 $MenuDaLieu = array(
     array('id' => 'nam-da', 'title' => 'Nấm da', 'link' => '/da-lieu/nam-da.html', 'session' => '/da-lieu/nam-da'),
     array('id' => 'viem-da', 'title' => 'viêm da', 'link' => '/da-lieu/viem-da.html', 'session' => '/da-lieu/viem-da'),
@@ -196,15 +200,8 @@ $MenuBXH = array(
     array('id' => 'mun-sinh-duc', 'title' => 'mụn sinh dục', 'link' => '/benh-xa-hoi/mun-sinh-duc.html', 'session' => '/benh-xa-hoi/mun-sinh-duc'),
     array('id' => 'ran-mu', 'title' => 'rận mu', 'link' => '/benh-xa-hoi/ran-mu.html', 'session' => '/benh-xa-hoi/ran-mu'),
 );
+$MenuHM = $benhs->getDanhSachBenhByIdKhoa(4);
 
-$MenuHM = array(
-    array('id' => 'benh-tri', 'title' => 'bệnh trĩ', 'link' => '/hau-mon-truc-trang/benh-tri.html', 'session' => '/hau-mon-truc-trang/benh-tri'),
-    array('id' => 'ro-hau-mon', 'title' => 'rò hậu môn', 'link' => '/hau-mon-truc-trang/ro-hau-mon.html', 'session' => '/hau-mon-truc-trang/ro-hau-mon'),
-    array('id' => 'apxe-hau-mon', 'title' => 'apxe hậu môn', 'link' => '/hau-mon-truc-trang/apxe-hau-mon.html', 'session' => '/hau-mon-truc-trang/apxe-hau-mon'),
-    array('id' => 'polyp-hau-mon', 'title' => 'polyp hậu môn', 'link' => '/hau-mon-truc-trang/polyp-hau-mon.html', 'session' => '/hau-mon-truc-trang/polyp-hau-mon'),
-    array('id' => 'nut-ke-hau-mon', 'title' => 'nứt kẽ hậu môn', 'link' => '/hau-mon-truc-trang/nut-ke-hau-mon.html', 'session' => '/hau-mon-truc-trang/nut-ke-hau-mon'),
-    array('id' => 'dai-tien-ra-mau', 'title' => 'đại tiện ra máu', 'link' => '/hau-mon-truc-trang/dai-tien-ra-mau.html', 'session' => '/hau-mon-truc-trang/dai-tien-ra-mau'),
-);
 
 ?>
 <?php
@@ -318,8 +315,8 @@ $sessionkhoa = Session::get('khoa');
                             </ul> -->
                                 <ul class="dropdown_menu_body_ul">
                                 <!-- <h5 class="dropdown_menu_body_ul_li_h5">hậu môn - trực tràng</h5> -->
-                                <?php foreach ($MenuHM as $value) : $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-                                    <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?></a></li>
+                                <?php foreach ($MenuHM as $value) : $activeClass = ($value['slug'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
+                                    <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['name'] ?></a></li>
                                 <?php endforeach; ?>
                             </ul> 
 

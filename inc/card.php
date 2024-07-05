@@ -54,8 +54,8 @@ $total_pages = ceil($total_articles / $limit);
             }
         } elseif ($sessionkhoa === 'hau-mon-truc-trang') {
             foreach ($MenuHM as $item) {
-                if ($item['id'] === $sessionBenh) {
-                    echo $item['title'];
+                if ($item['slug'] === $sessionBenh) {
+                    echo $item['name'];
                     break;
                 }
             }
