@@ -105,7 +105,7 @@
     /* các loại bệnh */
     #we_bring{
         padding-left: 2%;
-        height: 715px;
+        height: 725px;
         margin-bottom: 60px;
     }
     .we_bring_body {
@@ -133,7 +133,7 @@
 
     /* về chúng tôi */
     #experienced {
-        height: 1310px;
+        height: 1300px;
         margin-bottom: 25px;
         padding: 0px 2% 0 2%;
     }
@@ -205,7 +205,7 @@
     }
     .advise_row>.advise_row_left{
         margin-top: 4px;
-        font-size: 11px;
+        font-size: 10px;
         line-height: 15px;
     }
     .advise_row>.advise_row_left_right{
@@ -217,9 +217,10 @@
         height: 35px;
         font-size: 11px;
         border-radius: 8px;
+        padding: 5px 4px;
     }
     .advise_row>.advise_row_left_right>button{
-        width: 30%;
+        padding: 0px 20px;
         height: 35px;
         font-size: 9px;
         border-radius: 8px;
@@ -440,6 +441,9 @@
         font-size: 16px !important;
         display: block;
         line-height: 21px;
+    }
+    .mySwiper_title{
+        width: 32ch;
     }
 }
 .header_mobile_position{
@@ -686,7 +690,7 @@
 .sidebar_mobile>li>a{
     display: inline-block;
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: white;
     text-decoration: none;
@@ -695,7 +699,7 @@
 
 .sidebar_mobile>li>span{
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: white;
     text-decoration: none;
@@ -723,7 +727,7 @@
 
 .sidebar_mobile_li_ul>li>span{
     width: 100%;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     color: #0e97b5;
     text-decoration: none;

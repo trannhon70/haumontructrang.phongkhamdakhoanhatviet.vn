@@ -33,20 +33,20 @@
         </div>
     </div>
     <div class=" row mt-4">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-4">
-            <img style="width: 80%;" src="<?php echo $local ?>/images/logo/logo2.webp" alt="...">
+        <div class="col-xl-2"></div>
+        <div class="col-xl-3">
+            <img style="width: 100%;" src="<?php echo $local ?>/images/logo/logo2.webp" alt="...">
 
-            <div class="f_size_30 f_weight_700 color_success mt-3">
+            <div class="f_size_20 f_weight_700 color_success mt-3">
                 <span style="border-bottom: 3px solid; border-color: #02C7F2 ;">GIỜ LÀM VIỆC</span>
             </div>
             <div class="  ">
-                <div class="color_success f_size_30 f_weight_700">8:00 - 20:00
+                <div class="color_success f_size_20 f_weight_700">8:00 - 20:00
                 </div>
-                <div class="f_size_20">Tất cả các ngày trong tuần,
+                <div class="f_size_18">Tất cả các ngày trong tuần,
                     kể cả ngày lễ</div>
             </div>
-            <div class="f_size_30 f_weight_700 color_success w_100 mt-3">
+            <div class="f_size_20 f_weight_700 color_success w_100 mt-3">
                 <span clas style="border-bottom: 3px solid; border-color: #02C7F2;">THÔNG TIN LIÊN HỆ</span>
             </div>
             <div class="flex mt-2 w_100">
@@ -54,8 +54,8 @@
                     <img height="34px" width="36px" src="<?php echo $local ?>/images/icons/icon_phone_no.webp" alt="">
                 </div>
                 <div class="w_90" style="margin-left: 10px;">
-                    <div class="f_weight_700 f_size_20">HOTLINE </div>
-                    <h5 class="f_size_18">028-7776-7777</h5>
+                    <div class="f_weight_700 f_size_16">HOTLINE </div>
+                    <h5 class="f_size_16">028-7776-7777</h5>
                 </div>
             </div>
             <div class="flex mt-2 w_100">
@@ -63,9 +63,9 @@
                     <img height="34px" width="36px" src="<?php echo $local ?>/images/icons/icon_location_no.webp" alt="">
                 </div>
                 <div class="w_90" style="margin-left: 10px;">
-                    <div class="f_weight_700 f_size_20">ĐỊA CHỈ
+                    <div class="f_weight_700 f_size_16">ĐỊA CHỈ
                     </div>
-                    <h5 class="f_size_18">73 Kinh Dương Vương, P.12, Q.6, TP.HCM </h5>
+                    <h5 class="f_size_16">73 Kinh Dương Vương, P.12, Q.6, TP.HCM </h5>
                 </div>
             </div>
             <div class="flex mt-2 w_100">
@@ -73,20 +73,26 @@
                     <img height="34px" width="36px" src="<?php echo $local ?>/images/icons/icon_mail.webp" alt="">
                 </div>
                 <div class="w_90" style="margin-left: 10px;">
-                    <div class="f_weight_700 f_size_24">MAIL
+                    <div class="f_weight_700 f_size_16">MAIL
                     </div>
-                    <h5 class="f_size_18">pknhatviet@gmail.com</h5>
+                    <h5 class="f_size_16">pknhatviet@gmail.com</h5>
                 </div>
             </div>
         </div>
-        <div class="col-xl-6">
+        <div class="col-xl-5">
             <a href="">
-                <img style="max-height: 500px;" width="100%" src="<?php echo $local ?>/images/banner/Map.webp" alt="">
+                <img style="max-height: 470px;" width="100%" src="<?php echo $local ?>/images/banner/Map.webp" alt="">
             </a>
 
         </div>
 
-        <div class="col-xl-1"></div>
+        <div class="col-xl-2"></div>
+        <div style="    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #02C7F2; margin-top: 20px; " >Copy right @JV Nhật Việt</div>
     </div>
 </section>
 <!-- footer mobile -->

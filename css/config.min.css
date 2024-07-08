@@ -1,4 +1,7 @@
 /* font size */
+.f_size_16 {
+    font-size: 16px;
+}
 .f_size_18 {
     font-size: 18px;
 }

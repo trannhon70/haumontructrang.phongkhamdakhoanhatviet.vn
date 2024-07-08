@@ -35,8 +35,8 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 
-$local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
-// $local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
+// $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
+$local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
 
 
 ?>
@@ -135,9 +135,9 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
         }
 
         .dropdown_menu_body_ul_li_h5 {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
-            line-height: 36px;
+            line-height: 34px;
             color: white;
             text-transform: uppercase;
             border-bottom: 2px solid rgba(0, 216, 216, 1);
@@ -145,9 +145,9 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
 
         .dropdown_menu_body_ul_li_a {
             text-decoration: none !important;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            line-height: 36px;
+            line-height: 32px;
             text-transform: capitalize;
             color: white;
             width: 100%;
@@ -229,7 +229,7 @@ $sessionkhoa = Session::get('khoa');
                         <div class="header_top_right_row_col col-sm-4">
                             <div class="row">
                                 <div class="header_top_right_row_col_icon col-sm-3 ">
-                                    <img width="50px" style="height: 50px;" sty src="<?php echo $local ?>/images/icons/icon_phone.webp" alt="">
+                                    <img width="40px" style="height: 40px;" sty src="<?php echo $local ?>/images/icons/icon_phone.webp" alt="">
                                 </div>
                                 <div class="header_top_right_row_col_text col-sm-9">
                                     <div>
@@ -239,10 +239,10 @@ $sessionkhoa = Session::get('khoa');
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div style="padding-left: 0px; transform: translate(-20px , 0px); " class="col-sm-4">
                             <div class="row">
                                 <div class="header_top_right_row_col_icon col-sm-3 ">
-                                    <img width="50px" style="height: 50px;" sty src="<?php echo $local ?>/images/icons/icon_user.webp" alt="">
+                                    <img width="40px" style="height: 40px;" sty src="<?php echo $local ?>/images/icons/icon_user.webp" alt="">
                                 </div>
                                 <div class="header_top_right_row_col_text col-sm-9">
                                     <div>
@@ -254,10 +254,10 @@ $sessionkhoa = Session::get('khoa');
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div style="padding-left: 0px; transform: translate(-20px , 0px); " class="col-sm-4">
                             <div class="row">
                                 <div class="header_top_right_row_col_icon col-sm-3 ">
-                                    <img width="50px" style="height: 50px;" sty src="<?php echo $local ?>/images/icons/icon_location.webp" alt="">
+                                    <img width="40px" style="height: 40px;" sty src="<?php echo $local ?>/images/icons/icon_location.webp" alt="">
                                 </div>
                                 <div class="header_top_right_row_col_text col-sm-9">
                                     <div>
@@ -280,7 +280,7 @@ $sessionkhoa = Session::get('khoa');
 
             <div style="background-color: #0DCAF3;" class="container header_bottom">
                 <a href="<?php echo $local ?>/index.html" class="header_bottom_icon">
-                    <img height="40px" width="45px" src="<?php echo $local ?>/images/icons/icon_home.webp" alt="...">
+                    <img height="auto" width="35px" src="<?php echo $local ?>/images/icons/icon_home.webp" alt="...">
                 </a>
                 <div class="header_bottom_gt"> <a class="header_bottom_gt_a" target="_blank" href="https://haumontructrang.phongkhamdakhoanhatviet.vn/phong-kham-da-nhat-viet-phong-kham-da-khoa-uy-tin-tphcm-7.html">Giới thiệu</a></div>
                 <div class="header_bottom_dm">
@@ -326,7 +326,7 @@ $sessionkhoa = Session::get('khoa');
 
                 </div>
                 <div style="position: relative;" class="header_bottom_gk"><a class="header_bottom_gt_a" href="<?php echo $local ?>/tin-tuc-y-khoa.html">tin tức y khoa</a>
-                    <img style="top: -10px; right:0; width: 75px; position:absolute" class="header_bottom_gk_img absolute" src="<?php echo $local ?>/images/icons/icon_new.webp" alt="...">
+                    <img style="top: -10px; right:0; width: 40px; position:absolute" class="header_bottom_gk_img absolute" src="<?php echo $local ?>/images/icons/icon_new.webp" alt="...">
                 </div>
                 <div class="header_bottom_item"><a class="header_bottom_gt_a" href="#">Tư vấn trực tuyến</a></div>
             </div>

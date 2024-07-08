@@ -7,8 +7,7 @@
         position: absolute;
         top: 20px;
         right: 65px;
-        min-height: 400px;
-        width: 575px;
+        width: 420px;
         background-color: white;
         z-index: 700;
         /* position: fixed; */
@@ -18,7 +17,7 @@
     }
 
     .form-chat-title {
-        font-size: 40px;
+        font-size: 24px;
         font-weight: 700;
         color: #0DCAF3;
         text-align: center;
@@ -27,15 +26,15 @@
 
     .form-chat-input {
         width: 100%;
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
     .form-chat-input input {
         outline: none;
         width: 100%;
-        height: 50px;
+        height: 40px;
         border-radius: 25px;
-        font-size: 20px;
+        font-size: 12px;
         padding: 5px 20px;
         font-weight: 600;
         color: #999;
@@ -49,8 +48,7 @@
     }
 
     .form-chat-input-button {
-        margin-top: 15px;
-        width: 80%;
+        width: 50%;
         border-radius: 25px;
         background-color: #0DCAF3;
         background-image: linear-gradient(to right, #0DCAF3, #209dc3);
@@ -114,7 +112,7 @@
                     <div class="form-group form-chat-input">
                         <div class="datepicker date input-group">
                             <input name="ngaykham" type="text" placeholder="Ngày khám" class="form-control" id="fecha1">
-                            <div style="height: 50px; margin-top: 0px; " class="input-group-append">
+                            <div style="height: 40px; margin-top: 0px; " class="input-group-append">
                                 <span style="border-bottom: 2px;" class="input-group-text"><i class="fa fa-calendar"></i></span>
                             </div>
                         </div>

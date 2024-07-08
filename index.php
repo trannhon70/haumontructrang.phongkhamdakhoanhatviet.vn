@@ -115,7 +115,7 @@ $dataFake = array(
                 <img class="experienced_body_right_img" src="<?php echo $local ?>/images/users/user-group1.webp" alt="" />
             </div>
         </div>
-        <div style="margin-top: 85px;" class="experienced_footer row">
+        <div style="margin-top: 30px;" class="experienced_footer row">
             <div class="experienced_footer_col col-sm-3">
                 <img class="experienced_footer_col_img" src="<?php echo $local ?>/images/users/user_1.webp" alt="">
                 <div class="experienced_footer_col_title">Lê bản bình</div>
@@ -178,11 +178,11 @@ $dataFake = array(
 </section>
 
 <section class="container" id="advise">
-    <img style=" width:100%" src="<?php echo $local ?>/images/banner/bg-03.webp" alt="">
+    <img style=" width:100%" height="90px" src="<?php echo $local ?>/images/banner/bg-03.webp" alt="">
     <div class="advise_row row">
-        <div class="advise_row_left col-5 col-sm-5">nhận tư vấn sức khỏe từ
+        <div class="advise_row_left col-6 ">nhận tư vấn sức khỏe từ
             các chuyên gia của chúng tôi</div>
-        <div class="advise_row_left_right col-7 col-sm-7">
+        <div class="advise_row_left_right col-6 ">
             <input id="sdt_pc" class="advise_row_left_right_input" type="number" placeholder="Nhập số điện thoại">
             <button onclick="onClickCreatePhonePC()" class="advise_row_left_right_bottom">gửi</button>
         </div>
@@ -196,7 +196,7 @@ $dataFake = array(
                 <swiper-slide>
                     <div class="row">
                         <div class="col-sm-6">
-                            <img width="100%" height="400px" src="<?php echo $local ?>/images/users/user_6.webp" alt="">
+                            <img width="100%" height="370px" src="<?php echo $local ?>/images/users/user_6.webp" alt="">
                         </div>
                         <div class="feedback_row_right col-sm-6">
                             <div class="feedback_row_right_title">
@@ -221,7 +221,7 @@ $dataFake = array(
                 <swiper-slide>
                     <div class="row">
                         <div class="col-sm-6">
-                            <img width="100%" height="400px" src="<?php echo $local ?>/images/users/user_hieu.webp" alt="">
+                            <img width="100%" height="370px" src="<?php echo $local ?>/images/users/user_hieu.webp" alt="">
                         </div>
                         <div class="feedback_row_right col-sm-6">
                             <div class="feedback_row_right_title">
@@ -247,7 +247,7 @@ $dataFake = array(
                 <swiper-slide>
                     <div class="row">
                         <div class="col-sm-6">
-                            <img width="100%" height="400px" src="<?php echo $local ?>/images/users/user_khai.webp" alt="">
+                            <img width="100%" height="370px" src="<?php echo $local ?>/images/users/user_khai.webp" alt="">
                         </div>
                         <div class="feedback_row_right col-sm-6">
                             <div class="feedback_row_right_title">
@@ -305,7 +305,7 @@ $dataFake = array(
 <!-- tin tuc pc -->
 <section class="container tintuc_pc" id="tintuc">
     <div class="tintuc">tin tức mới nhất</div>
-    <swiper-container style="height: 390px;" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="3">
+    <swiper-container style="height: 360px;" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="4">
         <?php if ($tin_tuc_all_news) {
             while ($result = $tin_tuc_all_news->fetch_assoc()) {
                 $text = $result['descriptions'];
@@ -316,7 +316,7 @@ $dataFake = array(
                 <swiper-slide>
                     <a style="text-decoration: none;" href="<?php echo $local ?>/<?php echo $result['slug'] ?>.html">
                         <div style="border: 3px solid #02C7F2; border-radius: 50px ">
-                            <img style="border-radius: 46px; object-fit: fill; " width="100%" height="240px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
+                            <img style="border-radius: 46px; object-fit: fill; " width="100%" height="200px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
                         </div>
                         <div class="mySwiper_title">
                             <?php echo $result['title'] ?>
@@ -339,7 +339,7 @@ if ($tin_tuc_all_news) {
 <!-- tin tuc mobile -->
 <section class="container tintuc_mobile" id="tintuc">
     <div class="tintuc">tin tức mới nhất</div>
-    <swiper-container style="height: 390px;" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="1">
+    <swiper-container style="height: 360px;" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="1">
         <?php if ($tin_tuc_all_news) {
             while ($result = $tin_tuc_all_news->fetch_assoc()) {
                 $text = $result['descriptions'];
@@ -348,9 +348,9 @@ if ($tin_tuc_all_news) {
                 }
         ?>
                 <swiper-slide>
-                    <a style="text-decoration: none;" href="<?php echo $local ?>/<?php echo $result['slug'] ?>.html">
+                    <a style="text-decoration: none; display: block; padding: 0px 10%;" href="<?php echo $local ?>/<?php echo $result['slug'] ?>.html">
                         <div style="border: 3px solid #01969A; border-radius: 50px ">
-                            <img style="border-radius: 46px; object-fit: fill; " width="100%" height="240px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
+                            <img style="border-radius: 46px; object-fit: fill; " width="100%" height="200px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
                         </div>
                         <div class="mySwiper_title">
                             <?php echo $result['title'] ?>
