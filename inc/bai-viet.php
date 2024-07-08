@@ -75,7 +75,7 @@
         position: relative;
     }
 </style>
-<?php if (Session::get('role') === '1') {
+<?php if (Session::get('role') === '1' || Session::get('role') === '2') {
 
 ?>
     <a class="chinh-sua" href="<?php echo $local ?>/admin/bai-viet-edit.php?edit=<?php echo $get_post_detail['id'] ?>"><i style="font-size: 19px;" class='bx bxs-pencil'></i> chỉnh sửa</a>

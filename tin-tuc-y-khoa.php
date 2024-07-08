@@ -234,6 +234,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
         background-color: #008DBA;
         padding: 10px 15px;
     }
+
     .view {
         position: absolute;
         top: 50%;
@@ -296,18 +297,19 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
             <?php }
             } ?>
 
-<?php include('inc/form-tu-van.php');  ?>
+            <?php include('inc/form-tu-van.php');  ?>
             <a href="" class="w-100 mt-3">
                 <img class="w-100 mt-3" style="border-radius: 10px;" src="<?php echo $local ?>/images/banner/banner_khuyen_mai.webp " alt="...">
             </a>
         </div>
         <div class="health_row_col col-sm-8">
-            <?php if (Session::get('role') === '1') {
 
-            ?>
-                <a class="chinh-sua" href="<?php echo $local ?>/admin/tin-tuc-edit.php?edit=<?php echo $getByIdTT['id'] ?>"><i style="font-size: 19px;" class='bx bxs-pencil'></i> chỉnh sửa</a>
-            <?php } ?>
             <?php if (isset($getByIdTT)) { ?>
+                <?php if (Session::get('role') === '1' || Session::get('role') === '2') {
+
+                ?>
+                    <a class="chinh-sua" href="<?php echo $local ?>/admin/tin-tuc-edit.php?edit=<?php echo $getByIdTT['id'] ?>"><i style="font-size: 19px;" class='bx bxs-pencil'></i> chỉnh sửa</a>
+                <?php } ?>
                 <h1 class="health_row_col_title_tin_tuc">
                     <span><?php echo $getByIdTT['tieu_de'] ?></span>
                 </h1>
@@ -318,7 +320,11 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
 
                 </div>
             <?php } else { ?>
+                <?php if (Session::get('role') === '1' || Session::get('role') === '2') {
 
+                ?>
+                    <a class="chinh-sua" href="<?php echo $local ?>/admin/tin-tuc-edit.php?edit=<?php echo $getOneLimit['id'] ?>"><i style="font-size: 19px;" class='bx bxs-pencil'></i> chỉnh sửa</a>
+                <?php } ?>
                 <h1 class="health_row_col_title_tin_tuc">
                     <span><?php echo $getOneLimit['tieu_de'] ?></span>
                 </h1>
@@ -353,7 +359,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
         } ?>
     </div>
     <div class="health_row_col mt-2 ">
-        <?php if (Session::get('role') === '1') {
+        <?php if (Session::get('role') === '1' || Session::get('role') === '1') {
 
         ?>
             <a style="margin-left: 10px;" class="chinh-sua" href="<?php echo $local ?>/admin/tin-tuc-edit.php?edit=<?php echo $getByIdTT['id'] ?>"><i style="font-size: 19px;" class='bx bxs-pencil'></i> chỉnh sửa</a>
