@@ -53,7 +53,7 @@
         background-color: #0DCAF3;
         background-image: linear-gradient(to right, #0DCAF3, #209dc3);
         color: white;
-        font-size: 36px;
+        font-size: 21px;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
