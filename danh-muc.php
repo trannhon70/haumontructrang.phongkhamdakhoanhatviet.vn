@@ -11,6 +11,7 @@ $url_parts = parse_url($current_url);
 $path = $url_parts['path'];
 
 $path_parts = explode('/', trim($path, '/'));
+$id_slug = '';
 
 if (isset($path_parts[1])) {
     $file_name = $path_parts[1];

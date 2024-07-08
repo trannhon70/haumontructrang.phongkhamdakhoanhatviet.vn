@@ -31,9 +31,9 @@
                     echo $item['title'];
                 }
             }
-        } elseif ($sessionkhoa === 'hau-mon-truc-trang') {
+        } elseif ($sessionkhoa === 'hau-mon-truc-trang' || $khoa === 'hau-mon-truc-trang') {
             foreach ($MenuHM as $item) {
-                if ($item['slug'] === $sessionBenh) {
+                if ($item['slug'] === $sessionBenh || $item['slug'] === $benh) {
                     echo $item['name'];
                 }
             }
@@ -53,7 +53,7 @@
                             <a class="health_mobile_body_card_right_footer_left" href="#">
                                 hỏi bác sĩ
                             </a>
-                            <a class="health_mobile_body_card_right_footer_right" href="<?php echo $local ?>/<?php echo $sessionkhoa ?>/<?php echo $result['slug'] ?>.html">chi tiết</a>
+                            <a class="health_mobile_body_card_right_footer_right" href="<?php echo $local ?>/<?php echo $sessionkhoa !== false ? $sessionkhoa : $khoa ?>/<?php echo $result['slug'] ?>.html">chi tiết</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <div>
                 <div class="health_row_col_footer_pagi">
                     <?php if ($page > 1) : ?>
-                        <a onclick="setPageBaiViet('<?php echo $page - 1; ?>'); return true;" href="<?php echo $local ?>/<?php echo $khoa ?>/<?php echo $sessionBenh ?>.html" class="health_row_col_footer_pagi_prev">
+                        <a onclick="setPageBaiViet('<?php echo $page - 1; ?>'); return true;" href="<?php echo $local ?>/<?php echo $khoa ?>/<?php echo $sessionBenh !== false ? $sessionBenh : $id_slug ?>.html" class="health_row_col_footer_pagi_prev">
                             <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                 <path fill="white" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
                             </svg>
@@ -69,13 +69,13 @@
                     <?php endif; ?>
 
                     <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
-                        <a onclick="setPageBaiViet('<?php echo $i; ?>'); return true;" href="<?php echo $local ?>/<?php echo $khoa ?>/<?php echo $sessionBenh ?>.html" class="health_row_col_footer_pagi_number <?php if ($i == $page) echo 'health_row_col_footer_pagi_number_active'; ?>">
+                        <a onclick="setPageBaiViet('<?php echo $i; ?>'); return true;" href="<?php echo $local ?>/<?php echo $khoa ?>/<?php echo $sessionBenh !== false ? $sessionBenh : $id_slug ?>.html" class="health_row_col_footer_pagi_number <?php if ($i == $page) echo 'health_row_col_footer_pagi_number_active'; ?>">
                             <?php echo $i; ?>
                         </a>
                     <?php endfor; ?>
 
                     <?php if ($page < $total_pages) : ?>
-                        <a onclick="setPageBaiViet('<?php echo $page + 1; ?>'); return true;" href="<?php echo $local ?>/<?php echo $khoa ?>/<?php echo $sessionBenh ?>.html" class="health_row_col_footer_pagi_next">
+                        <a onclick="setPageBaiViet('<?php echo $page + 1; ?>'); return true;" href="<?php echo $local ?>/<?php echo $khoa ?>/<?php echo $sessionBenh !== false ? $sessionBenh : $id_slug ?>.html" class="health_row_col_footer_pagi_next">
                             <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                 <path fill="white" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
                             </svg>
