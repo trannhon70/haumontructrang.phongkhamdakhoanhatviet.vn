@@ -86,7 +86,7 @@
 
 </h1>
 <div id="banner_km_mobile" style="width: 100%;" >
-        <img width="100%" src="<?php echo $local ?>/images/logo_mobile/bg_mobile_km.gif" alt="">
+        <img  style="border: 1px solid #208CAF" width="100%" src="<?php echo $local ?>/images/logo_mobile/bg_mobile_km.gif" alt="">
     </div>
 <hr>
 <div id="bai-viet" class="">

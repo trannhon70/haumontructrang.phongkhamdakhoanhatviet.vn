@@ -74,8 +74,8 @@
 }
 
 .footer_container_row_card_body_left{
-    width: 61px;
-    height: 81px;
+    width: 80px;
+    height: 54px;
 }
 
 .footer_container_row_card_body_right{
@@ -92,7 +92,7 @@
 
 .footer_container_row_card_body_right h5{
     font-weight: 400;
-    font-size: 16px;
+    font-size: 12px;
     color: white;
     text-align: center;
     text-transform: uppercase;

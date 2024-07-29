@@ -284,8 +284,8 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
 
 <section class="container" id="health">
     <div class=" health_row row">
-        <div class="health_row_col col-sm-4">
-            <span>tin tức</span>
+        <div class="health_row_col col-sm-3">
+            <!-- <span>tin tức</span>
             <?php if ($getAllLimit) {
                 while ($result = $getAllLimit->fetch_assoc()) {
                     $slug = $result['slug'];
@@ -295,14 +295,14 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
                         <div class="health_row_col_div <?php echo $activeClass ?>"><?php echo  $result['tieu_de'] ?></div>
                     </a>
             <?php }
-            } ?>
+            } ?> -->
 
             <?php include('inc/form-tu-van.php');  ?>
             <a href="" class="w-100 mt-3">
                 <img class="w-100 mt-3" style="border-radius: 10px;" src="<?php echo $local ?>/images/banner/banner_khuyen_mai.webp " alt="...">
             </a>
         </div>
-        <div class="health_row_col col-sm-8">
+        <div class="health_row_col col-sm-9">
             <?php if (Session::get('role') === '1' || Session::get('role') === '2') {
 
             ?>
@@ -342,8 +342,8 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
 <!-- mobile tin tuc -->
 <section id="health_tintuc_mobile">
     <div style="padding: 10px 10px;">
-        <span style="font-size: 16px; font-weight: 700; color: #166B85; border-bottom: 2px solid #166B85; text-transform: uppercase; ">tin tức</span>
-        <?php if ($getAllLimit) {
+    <span style="font-size: 16px; font-weight: 400; color: black; border-bottom: 1px solid black; text-transform: capitalize; ">trang chủ > tin tức</span>
+        <!-- <?php if ($getAllLimit) {
             while ($result = $getAllLimit->fetch_assoc()) {
                 $slug = $result['slug'];
                 $activeClass = ($slugTinTuc === $slug) ? 'active_menu_tab' : '';
@@ -352,7 +352,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
                     <div style="font-size: 12px; line-height: 21px; text-transform: capitalize; " class="health_row_col_div <?php echo $activeClass ?>"><?php echo  $result['tieu_de'] ?></div>
                 </a>
         <?php }
-        } ?>
+        } ?> -->
     </div>
     <div class="health_row_col mt-2 ">
         <?php if (Session::get('role') === '1' || Session::get('role') === '2') {
@@ -365,7 +365,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
                 <span><?php echo $getByIdTT['tieu_de'] ?></span>
             </h1>
             <div id="banner_km_mobile" style="width: 100%;">
-                <img width="100%" src="<?php echo $local ?>/images/logo_mobile/bg_mobile_km.gif" alt="">
+                <img style="border: 1px solid #208CAF" width="100%" src="<?php echo $local ?>/images/logo_mobile/bg_mobile_km.gif" alt="">
             </div>
             <hr>
             <div id="bai-viet" class="">
@@ -379,7 +379,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
                 <span><?php echo $getOneLimit['tieu_de'] ?></span>
             </h1>
             <div id="banner_km_mobile" style="width: 100%;">
-                <img width="100%" src="<?php echo $local ?>/images/logo_mobile/bg_mobile_km.gif" alt="">
+                <img style="border: 1px solid #208CAF" width="100%" src="<?php echo $local ?>/images/logo_mobile/bg_mobile_km.gif" alt="">
             </div>
             <hr>
             <div id="bai-viet" class="">

@@ -118,7 +118,7 @@
         margin: 35px 0px 50px 0px;
     }
     .we_bring_body_botom_col_title {
-        font-size: 25px;
+        font-size: 22px;
     }
     .we_bring_body_botom_col_text {
         font-size: 17px;
@@ -138,7 +138,7 @@
         padding: 0px 2% 0 2%;
     }
     .experienced_body_left_title{
-        font-size: 26px;
+        font-size: 16px;
         line-height: 40px;
     }
     .experienced_body_left_title1{
@@ -444,6 +444,87 @@
     }
     .mySwiper_title{
         width: 32ch;
+    }
+
+
+    
+    #dominance{
+        margin-top: 0px;
+    }
+    .dominance_container_row_col>span {
+        font-size: 16px;
+    }
+
+    .space_container_body{
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+    }
+    .space_container_body_card{
+        width: 46% !important;
+    }
+
+    .space_container_body_card > img{
+        width: 100%;
+    }
+
+    .procedure_container_title{
+        font-size: 16px;
+    }
+
+    .procedure_container_title1 {
+        font-size: 22px;
+    }
+
+    .procedure_container_bottom{
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .procedure_container_bottom_card{
+        width: 47%;
+        margin-top: 0px;
+    }
+
+    .procedure_container_bottom_card_body{
+        padding: 4px 0px 0px 10px;
+    }
+
+    .procedure_container_bottom_card_body>img{
+        width: 40px;
+        height: 40px;
+    }
+    .procedure_container_bottom_card_body>div{
+        font-size: 11px;
+    }
+
+    .feedback_container_row_card_top{
+        display: block;
+        text-align: center;
+    }
+    .feedback_container_row_card_top > img{
+        width: 100px;
+        height: 100px;
+    }
+    .feedback_container_row_card_top_right > hr{
+        margin-left: auto;
+    }
+
+    .feedback_container_row_card_top_right_content > img {
+        width: 80px;
+    }
+    .feedback_container_row_card_top_right_text {
+        font-size: 16px;
+    }
+    .feedback_container_row_card_bottom{
+        font-size: 16px;
+    }
+
+    .dominance_container_row_col>span {
+        font-size: 16px;
+    }
+
+    .feedback_container_row_card {
+        height: 405px;
     }
 }
 .header_mobile_position{

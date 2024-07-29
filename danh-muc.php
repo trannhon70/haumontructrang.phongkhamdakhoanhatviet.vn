@@ -231,7 +231,7 @@ if (isset($path_parts[2])) {
 
 <section class="container" id="health">
     <div class=" health_row row">
-        <div class="health_row_col col-sm-4">
+        <div class="health_row_col col-sm-3">
             <span> <?php
                     if ($sessionkhoa === 'nam-khoa') {
                         echo 'nam khoa';
@@ -280,7 +280,7 @@ if (isset($path_parts[2])) {
                 <img class="w-100 mt-3" style="border-radius: 10px;" src="<?php echo $local ?>/images/banner/banner_khuyen_mai.webp " alt="...">
             </a>
         </div>
-        <div class="health_row_col col-sm-8">
+        <div class="health_row_col col-sm-9">
             <?php
             if (isset($get_post_detail)) {
                 include('inc/bai-viet.php');

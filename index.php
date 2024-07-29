@@ -189,180 +189,223 @@ $dataFake = array(
     </div>
 </section>
 
-<section class="container" id="feedback">
-    <div class="feedback_row row">
-        <div class="feedback_col col-sm-8">
-            <swiper-container class="mySwiper" space-between="30" pagination="true" pagination-clickable="true">
-                <swiper-slide>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img width="100%" height="370px" src="<?php echo $local ?>/images/users/user_6.webp" alt="">
-                        </div>
-                        <div class="feedback_row_right col-sm-6">
-                            <div class="feedback_row_right_title">
-                                Phản hồi từ khách hàng
 
-                            </div>
-                            <hr>
-                            </hr>
-                            <div class="feedback_row_right_text">
-                                “Mình bị viêm da cũng khá nặng, đã chữa trị nhiều nơi nhưng không khỏi. Mình biết đến Phòng khám Đa khoa Nhật Việt qua một người bạn.
-                                Khi mình đến khám, bác sĩ và nhân viên phòng khám hướng dẫn mình rất chi tiết trong từng hạng mục.
-                                Từ chẩn đoán, xét nghiệm đến điều trị bệnh đều được thực hiện nhanh chóng và hiệu quả. Nhờ đó, đến nay mình đã khỏi hẳn và không phải lo lắng bệnh tái phát.”
-                            </div>
-                            <hr>
-                            </hr>
-                            <div class="feedback_row_right_name">Chị Kim Oanh
-                            </div>
-                            <span class="feedback_row_right_nv">Tân Phú (Nhân viên văn phòng).</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img width="100%" height="370px" src="<?php echo $local ?>/images/users/user_hieu.webp" alt="">
-                        </div>
-                        <div class="feedback_row_right col-sm-6">
-                            <div class="feedback_row_right_title">
-                                Phản hồi từ khách hàng
-
-                            </div>
-                            <hr>
-                            </hr>
-                            <div class="feedback_row_right_text">
-                                “Công việc của Hiếu khá bận nên thời gian rảnh rất ít. Do đó Hiếu đã chọn thăm khám nam khoa tại Đa Khoa Nhật Việt qua Đặt hẹn Online.
-                                Đội ngũ nhân viên phòng khám rất dễ thương, thân thiện và nhẹ nhàng trong tiếp đón. Các Y – Bác ai cũng nhiệt tình, chu đáo và tận tâm.
-                                Hiếu cảm thấy rất may mắn và hài lòng khi mình đã tin chọn phòng khám Đa khoa Nhật Việt.”
-                            </div>
-                            <hr>
-                            </hr>
-                            <div class="feedback_row_right_name">Anh Trung Hiếu
-
-                            </div>
-                            <span class="feedback_row_right_nv">Bình Dương (Hướng dẫn viên Du lịch).</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img width="100%" height="370px" src="<?php echo $local ?>/images/users/user_khai.webp" alt="">
-                        </div>
-                        <div class="feedback_row_right col-sm-6">
-                            <div class="feedback_row_right_title">
-                                Phản hồi từ khách hàng
-
-                            </div>
-                            <hr>
-                            </hr style="">
-                            <div class="feedback_row_right_text">
-                                “Hải mới có chuyến công tác ở Sài Gòn nên tranh thủ cùng bạn đi làm xét nghiệm Bệnh xã hội tại Phòng khám Đa khoa Nhật Việt.
-                                Theo Hải thì chất lượng phòng khám là khỏi chê, đội ngũ nhân viên y, bác sĩ rất thân thiện và nhiệt tình. Thời gian trả kết quả cũng rất nhanh, cái chính là an toàn và bảo mật.
-                                Đây là điều mà Hải cảm thấy hài lòng nhất, xin cám ơn Đa khoa Nhật Việt!”
-                            </div>
-                            <hr>
-                            </hr>
-                            <div class="feedback_row_right_name">Anh Minh Hải
-
-                            </div>
-                            <span class="feedback_row_right_nv"> Bà Rĩa Vũng Tàu (Kiến trúc sư công trình).</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-            </swiper-container>
+<section id="dominance">
+    <div class="container dominance_container">
+        <div class="dominance_container_title">
+            ưu thế vượt trội
         </div>
-        <div class="feedback_row_col col-sm-4">
-            <div class="feedback_row_right_title">
-                bài viết gần đây
-
+        <div class="row dominance_container_row">
+            <div class="dominance_container_row_col col-md-6">
+                <img src="images/icons/icon_check1.webp" alt="">
+                <span>Đội ngũ bác sĩ chuyên môn cao</span>
             </div>
-            <hr style="width: 100%;" class="feedback_hr">
-            <?php
-            if ($danhSachBaiVietTheoKhoa) {
-                for ($i = 0; $i < count($danhSachBaiVietTheoKhoa); $i++) {
-                    $result = $danhSachBaiVietTheoKhoa[$i];
-                    $text = $result['descriptions'];
-                    $tieu_de = $result['tieu_de'];
-            ?>
-                    <a onclick="setkhoaBenhSession('<?php echo addslashes($result['slug_khoa']); ?>', '<?php echo addslashes($result['slug_benh']); ?>');" style="text-decoration: none; color: black;" href="<?php echo $local ?>/<?php echo $result['slug_khoa'] ?>/<?php echo $result['slug'] ?>.html">
-                        <div class="feedback_row_col_card">
-                            <img style="min-width: 70px;" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
-                            <div class="feedback_row_col_card_text">
-                                <?php echo htmlspecialchars($tieu_de); ?>
-                            </div>
-                        </div>
-                    </a>
-            <?php
-                }
-            }
-            ?>
+            <div class="dominance_container_row_col col-md-6">
+                <img src="images/icons/icon_check1.webp" alt="">
+                <span>Môi trường thân thiện, dịch vụ tận tâm, chu đáo</span>
+            </div>
+            <div class="dominance_container_row_col col-md-6">
+                <img src="images/icons/icon_check1.webp" alt="">
+                <span>Hệ thống máy móc hiện đại</span>
+            </div>
+            <div class="dominance_container_row_col col-md-6">
+                <img src="images/icons/icon_check1.webp" alt="">
+                <span>Chi phí khám hỗ trợ điều trị bệnh hợp lý</span>
+            </div>
+            <div class="dominance_container_row_col col-md-6">
+                <img src="images/icons/icon_check1.webp" alt="">
+                <span>Thủ tục nhanh gọn, không rườm rà</span>
+            </div>
+            <div class="dominance_container_row_col col-md-6">
+                <img src="images/icons/icon_check1.webp" alt="">
+                <span>Môi trường thân thiện</span>
+            </div>
+        </div>
+        <div class="dominance_container_bottom">
+            <img src="images/users/user_ai.webp" alt="">
+        </div>
+    </div>
+
+
+</section>
+
+<section id="space">
+    <div class="container space_container">
+        <div class="space_container_title">Không gian phòng khám</div>
+        <div class="space_container_body">
+            <div class="space_container_body_card">
+                <img src="images/logo/khong_gian.webp" alt="">
+            </div>
+            <div class="space_container_body_card">
+                <img src="images/logo/khong_gian_1.webp" alt="">
+            </div>
+            <div class="space_container_body_card">
+                <img src="images/logo/khong_gian_2.webp" alt="">
+            </div>
+            <div class="space_container_body_card">
+                <img src="images/logo/khong_gian_3.webp" alt="">
+            </div>
         </div>
     </div>
 </section>
-<img id="bg-ngang" width="100%" height="200px" src="<?php echo $local ?>/images/banner/bg_4.webp" alt="">
 
-<!-- tin tuc pc -->
-<section class="container tintuc_pc" id="tintuc">
-    <div class="tintuc">tin tức mới nhất</div>
-    <swiper-container style="height: 360px;" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="4">
-        <?php if ($tin_tuc_all_news) {
-            while ($result = $tin_tuc_all_news->fetch_assoc()) {
-                $text = $result['descriptions'];
-                if (strlen($text) > 100) {
-                    $text = substr($text, 0, 100) . '...';
-                }
-        ?>
-                <swiper-slide>
-                    <a style="text-decoration: none;" href="<?php echo $local ?>/<?php echo $result['slug'] ?>.html">
-                        <div style="border: 3px solid #02C7F2; border-radius: 50px ">
-                            <img style="border-radius: 46px; object-fit: fill; " width="100%" height="200px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
-                        </div>
-                        <div class="mySwiper_title">
-                            <?php echo $result['title'] ?>
-                        </div>
-                        <div class="mySwiper_text"><?php echo htmlspecialchars($text); ?></div>
-                    </a>
-                </swiper-slide>
-        <?php }
-        } ?>
-    </swiper-container>
+<section id="procedure">
+    <div class="container procedure_container">
+        <div class="procedure_container_title">
+            quy trình
+        </div>
+        <div class="procedure_container_title1">
+            hỗ trợ khám chữa bệnh
+        </div>
+        <div class="procedure_container_bottom">
+            <div class="procedure_container_bottom_card">
+                <div class="procedure_container_bottom_card_body">
+                    <img src="images/icons/icon_tuvan.webp" alt="...">
+                    <div>
+                        Tư vấn và <br> đặt lịch hẹn online
+                    </div>
+                </div>
+            </div>
+            <div class="procedure_container_bottom_card">
+                <div class="procedure_container_bottom_card_body">
+                    <img src="images/icons/icon_sieuam.webp" alt="...">
+                    <div>
+                        Xét nghiệm <br> và chuẫn đoán
+                    </div>
+                </div>
+            </div>
+            <div class="procedure_container_bottom_card">
+                <div class="procedure_container_bottom_card_body">
+                    <img src="images/icons/icon_cotruyen.webp" alt="...">
+                    <div>
+                        Hỗ trợ các <br> bước điều trị
+                    </div>
+                </div>
+            </div>
+            <div class="procedure_container_bottom_card">
+                <div class="procedure_container_bottom_card_body">
+                    <img src="images/icons/icon_theodoi.webp" alt="...">
+                    <div>
+                        Theo dõi <br> tiến trình bệnh
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<?php
-// Đặt lại con trỏ kết quả về đầu tiên
-if ($tin_tuc_all_news) {
-    $tin_tuc_all_news->data_seek(0);
-}
-?>
+<section id="feedback">
+    <div class="feedback_container container">
+        <div class="feedback_container_title">
+            Phản hồi từ khách hàng
+        </div>
+        <div class="feedback_container_row">
+            <div class="feedback_container_row_card activeFeedback">
+                <div class="feedback_container_row_card_top">
+                    <img src="images/users/user_kimOanh.webp" alt="">
+                    <div class="feedback_container_row_card_top_right">
+                        <div class="feedback_container_row_card_top_right_title">
+                            Kim Oanh
+                        </div>
+                        <div class="feedback_container_row_card_top_right_text">
+                            Nhân viên văn phòng - Tân Phú
+                        </div>
+                        <hr>
+                        <div class="feedback_container_row_card_top_right_content">
+                            <img src="images/icons/icon_start.webp" alt="">
+                            <div>
+                                2 ngày trước
+                            </div>
+                            <button>Mới</button>
+                        </div>
 
-<!-- tin tuc mobile -->
-<section class="container tintuc_mobile" id="tintuc">
-    <div class="tintuc">tin tức mới nhất</div>
-    <swiper-container style="height: 360px;" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="1">
-        <?php if ($tin_tuc_all_news) {
-            while ($result = $tin_tuc_all_news->fetch_assoc()) {
-                $text = $result['descriptions'];
-                if (strlen($text) > 100) {
-                    $text = substr($text, 0, 100) . '...';
-                }
-        ?>
-                <swiper-slide>
-                    <a style="text-decoration: none; display: block; padding: 0px 10%;" href="<?php echo $local ?>/<?php echo $result['slug'] ?>.html">
-                        <div style="border: 3px solid #01969A; border-radius: 50px ">
-                            <img style="border-radius: 46px; object-fit: fill; " width="100%" height="200px" src="<?php echo $local ?>/admin/uploads/<?php echo $result['img'] ?>" alt="">
+                    </div>
+                </div>
+                <div class="feedback_container_row_card_bottom">
+                    “Mình bị viêm da cũng khá nặng, đã chữa trị nhiều nơi nhưng không khỏi. Mình biết đến Phòng khám Đa khoa Nhật Việt qua một người bạn. Khi mình đến khám, bác sĩ và nhân viên phòng khám hướng dẫn mình rất chi tiết trong từng hạng mục.”
+                </div>
+            </div>
+            <div class="feedback_container_row_card ">
+                <div class="feedback_container_row_card_top">
+                    <img src="images/users/user_khai.webp" alt="">
+                    <div class="feedback_container_row_card_top_right">
+                        <div class="feedback_container_row_card_top_right_title">
+                            Minh Hải
                         </div>
-                        <div class="mySwiper_title">
-                            <?php echo $result['title'] ?>
+                        <div class="feedback_container_row_card_top_right_text">
+                        Kiến trúc sư công trình - Bà Rịa Vũng Tàu
                         </div>
-                        <div class="mySwiper_text"><?php echo htmlspecialchars($text); ?></div>
-                    </a>
-                </swiper-slide>
-        <?php }
-        } ?>
-    </swiper-container>
+                        <hr>
+                        <div class="feedback_container_row_card_top_right_content">
+                            <img src="images/icons/icon_start.webp" alt="">
+                            <div>
+                                3 ngày trước
+                            </div>
+                            <button>Mới</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="feedback_container_row_card_bottom">
+                “Theo Hải thì chất lượng phòng khám là khỏi chê, đội ngũ nhân viên y, bác sĩ rất thân thiện và nhiệt tình. Thời gian trả kết quả cũng rất nhanh, cái chính là an toàn và bảo mật. Đây là điều mà Hải cảm thấy hài lòng nhất, xin cám ơn Đa khoa Nhật Việt!”
+                </div>
+            </div>
+            <div class="feedback_container_row_card ">
+                <div class="feedback_container_row_card_top">
+                    <img src="images/users/user_hieu.webp" alt="">
+                    <div class="feedback_container_row_card_top_right">
+                        <div class="feedback_container_row_card_top_right_title">
+                            Trung Hiếu
+                        </div>
+                        <div class="feedback_container_row_card_top_right_text">
+                           Hướng dẫn viên du lịch - Bình Dương
+                        </div>
+                        <hr>
+                        <div class="feedback_container_row_card_top_right_content">
+                            <img src="images/icons/icon_start.webp" alt="">
+                            <div>
+                                2 tuần trước
+                            </div>
+                            <!-- <button>Mới</button> -->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="feedback_container_row_card_bottom">
+                “Công việc của Hiếu khá bận nên thời gian rảnh rất ít. Do đó Hiếu đã chọn thăm khám nam khoa tại Đa Khoa Nhật Việt qua Đặt hẹn Online.”
+                </div>
+            </div>
+        </div>
+        <div class="index-feedbacks">
+            <div class="feedback-item feedback-item-0 activeFeedback"></div>
+            <div class="feedback-item feedback-item-1"></div>
+            <div class="feedback-item feedback-item-2"></div>
+        </div>
+    </div>
 </section>
 
+<script>
+    const feedbacks = document.querySelectorAll('.feedback_container_row_card');
+    const listItems = document.querySelectorAll('.feedback-item');
+    let currentIndex = 0;
+
+    const showFeedback = (index) => {
+        feedbacks.forEach((feedback, idx) => {
+            feedback.classList.toggle('activeFeedback', idx === index);
+        });
+        listItems.forEach((listItem, idx) => {
+            listItem.classList.toggle('activeFeedback', idx === index);
+        });
+    };
+
+    const handleChangeSlideFeedback = () => {
+        currentIndex = (currentIndex + 1) % feedbacks.length;
+        showFeedback(currentIndex);
+    };
+
+    showFeedback(currentIndex); // Initialize the first feedback as active
+    setInterval(handleChangeSlideFeedback, 4000);
+</script>
 
 <script>
     function formatPhoneNumber(phoneNumber) {

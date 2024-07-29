@@ -133,6 +133,11 @@
     </div>
 </div>
 
+<div id="slide_mobile" style="border-bottom:2px solid white"  >
+    <img height="auto" width="100%" src="<?php echo $local ?>/images/banner/mobile_banner.webp" alt="">
+   
+</div>
+
 <script>
     function formatPhoneNumber(phoneNumber) {
         let cleaned = ('' + phoneNumber).replace(/\D/g, '');
