@@ -128,7 +128,7 @@
 .experienced_body_left_title{
     line-height: 53px;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .experienced_body_left_title1{
@@ -562,7 +562,7 @@
     font-weight: 700;
     line-height: 25px;
     color: #0DCAF3;
-    text-transform: uppercase;
+    text-transform: capitalize;
     border-bottom: 1px solid transparent;
     border-color: #0DCAF3;
     border-image: linear-gradient(to right, #0DCAF3, #008DBA);
@@ -830,7 +830,7 @@
 }
 
 .procedure_container_title {
-    font-size: 23px;
+    font-size: 22px;
     color: white;
     font-weight: 700;
     text-transform: uppercase;
