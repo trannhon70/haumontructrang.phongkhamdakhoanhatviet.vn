@@ -2,9 +2,7 @@
 
 include 'inc/header.php';
 include '../classes/tin_tuc.php';
-
 if (Session::get('role') === '1' || Session::get('role') === '2') {
-
 $tin_tuc = new news()
 ?>
 <?php
@@ -32,7 +30,20 @@ if (isset($_SESSION['message'])) {
 
 ?>
 
+<style>
+        .list-img.activeImg {
+            border: 4px solid red;
+            transform: scale(1.1);
+        }
 
+        .list-img {
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 1px solid black;
+            width: 125px;
+            height: 125px;
+        }
+    </style>
 
 
 <form action="tin-tuc-create.php" method="post" enctype="multipart/form-data">
@@ -56,13 +67,22 @@ if (isset($_SESSION['message'])) {
             </div>
         </div>
 
-        <div class="row">
+        <div style="height: 350px;" class="row">
+                <div class="mb-3 col-sm-6">
+                    <label for="image" class="form-label">Hình ảnh:</label>
+                    <input accept="image/*" type="file" id="image" name="image" class="form-control" placeholder="">
+                    <input type="hidden" id="selectedImageInput" name="selectedImage">
+                    <div id="selectedImageContainer" style="margin-top: 10px; height: 200px; width: 200px;  ">
+                        <!-- Nút xóa sẽ được thêm vào đây -->
+                    </div>
+                </div>
+                <div class="mb-3 col-sm-6">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Xem hình ảnh
+                    </button>
 
-            <div class="mb-3 col-sm-12">
-                <label for="image" class="form-label">Hình ảnh:</label>
-                <input accept="image/*" type="file" id="image" name="image" class="form-control" placeholder="">
+                </div>
             </div>
-        </div>
         <div class="row">
             <div class="mb-3 col-sm-12">
                 <label for="disabledSelect" class="form-label">Nội dung tin tức:</label>
@@ -88,7 +108,86 @@ if (isset($_SESSION['message'])) {
         <button name="submit" type="submit" class="btn btn-primary">Tạo tin tức</button>
     </fieldset>
 </form>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hình ảnh</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="image" class="form-label">Chọn hình ảnh:</label>
+                    <div style="height: 400px; display: flex; gap:10px; flex-wrap: wrap; overflow: auto;">
+                        <?php foreach ($images as $image) : ?>
+                            <img class="list-img" src="<?php echo htmlspecialchars($image); ?>" alt="Image" onclick="selectImage(this)">
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSelectedImage()" data-bs-dismiss="modal">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+        function getFileNameFromPath(path) {
+            const parts = path.split('/');
+            return parts[parts.length - 1];
+        }
 
+        function saveSelectedImage() {
+            const selectedImage = document.querySelector('.list-img.activeImg');
+            if (selectedImage) {
+                const selectedImageSrc = selectedImage.src;
+                const fileName = selectedImageSrc.split('/').pop();
+                const imageInput = document.getElementById('image');
+                const selectedImageInput = document.getElementById('selectedImageInput');
+                const selectedImageContainer = document.getElementById('selectedImageContainer');
+                // Xóa hình ảnh đã chọn trước đó
+                selectedImageContainer.innerHTML = '';
+                // Tạo phần tử hình ảnh xem trước
+                const previewImage = document.createElement('img');
+                previewImage.src = `uploads/${fileName}`;
+                previewImage.alt = 'Selected Image';
+                previewImage.style.width = '200px';
+                previewImage.style.height = '200px';
+                // Tạo nút xóa
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Xóa';
+                deleteButton.style.display = 'block';
+                deleteButton.style.marginTop = '10px';
+                deleteButton.onclick = function() {
+                    // Xóa hình ảnh đã chọn
+                    selectedImageContainer.innerHTML = '';
+                    selectedImageInput.value = '';
+                    // Kích hoạt lại input file
+                    imageInput.disabled = false;
+                };
+                // Thêm hình ảnh xem trước và nút xóa vào container
+                selectedImageContainer.appendChild(previewImage);
+                selectedImageContainer.appendChild(deleteButton);
+                // Cập nhật giá trị của input ẩn với tên file hình ảnh được chọn
+                selectedImageInput.value = fileName;
+                // Vô hiệu hóa input file
+                imageInput.disabled = true;
+
+            } else {
+                console.log("No image selected");
+            }
+        }
+
+        function selectImage(imageSrc) {
+            const images = document.querySelectorAll('.list-img');
+            images.forEach(img => {
+                img.classList.remove('activeImg');
+            });
+            // Thêm lớp activeImg vào hình ảnh được chọn
+            imageSrc.classList.add('activeImg');
+
+        }
+    </script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const titleInput = document.getElementById("titleInput");

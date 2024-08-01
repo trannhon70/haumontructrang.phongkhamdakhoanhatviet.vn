@@ -22,6 +22,7 @@ class post
   //thêm danh mục 
   public function insert_post($data, $files)
   {
+    // Lấy dữ liệu từ biểu mẫu và bảo vệ chống SQL injection
     $tieu_de = mysqli_real_escape_string($this->db->link, $data['tieu_de']);
     $id_benh = mysqli_real_escape_string($this->db->link, $data['id_benh']);
     $id_khoa = mysqli_real_escape_string($this->db->link, $data['id_khoa']);
@@ -30,48 +31,41 @@ class post
     $keyword = mysqli_real_escape_string($this->db->link, $data['keyword']);
     $description = mysqli_real_escape_string($this->db->link, $data['description']);
     $slug = mysqli_real_escape_string($this->db->link, $data['slug']);
-    $created_at =  $this->fm->created_at();
-    
-    //kiểm tra hình ảnh và lấy hình ảnh cho vào folder uploads
-    $permited = array('jpg', 'jpeg', 'png', 'gif');
-    $file_name = $_FILES['image']['name'];
-    $file_size = $_FILES['image']['size'];
-    $file_temp = $_FILES['image']['tmp_name'];
+    $selectedImage = mysqli_real_escape_string($this->db->link, $data['selectedImage']);
+    $created_at = $this->fm->created_at();
 
-    $div = explode('.', $file_name);
-    $file_ext = strtolower(end($div));
-    $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
-    $uploaded_image = "uploads/" . $unique_image;
-
-
-    //đếm số lượng bài viét
-    $latest_baiviet_query = "SELECT id FROM `admin_baiviet` ORDER BY id DESC LIMIT 1";
-    $result_latest_baiviet = $this->db->select($latest_baiviet_query);
-
-    $latest_id = 0;
-    if ($result_latest_baiviet) {
-      $latest_baiviet = $result_latest_baiviet->fetch_assoc();
-      $latest_id = $latest_baiviet['id'];
-    }
-    $user_id = Session::get('id');
-    // Hiển thị ID bài viết mới nhất
-    // echo "ID của bài viết mới nhất là: " . $latest_id;
-
-    $slug = $slug . '-' . ($latest_id);
-
-    if ($tieu_de !== '' && $id_benh !== '' && $content !== '') {
+    // Xử lý hình ảnh nếu có
+    $img = $selectedImage; // Mặc định là hình ảnh đã chọn trước đó
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+      $file_name = $_FILES['image']['name'];
+      $file_temp = $_FILES['image']['tmp_name'];
+      $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+      $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
+      $uploaded_image = "uploads/" . $unique_image;
       move_uploaded_file($file_temp, $uploaded_image);
-      $query = "INSERT INTO admin_baiviet (title,slug,content,id_benh,id_khoa,created_at,tieu_de,keyword,descriptions,user_id,img) VALUE('$title','$slug','$content','$id_benh','$id_khoa','$created_at','$tieu_de','$keyword','$description','$user_id','$unique_image') ";
+      $img = $unique_image; // Cập nhật với hình ảnh mới
+    }
+
+    // Lấy ID bài viết mới nhất và tạo slug
+    $latest_id_query = "SELECT id FROM `admin_baiviet` ORDER BY id DESC LIMIT 1";
+    $latest_id_result = $this->db->select($latest_id_query);
+    $latest_id = ($latest_id_result && $latest_id_result->num_rows > 0)
+      ? $latest_id_result->fetch_assoc()['id']
+      : 0;
+    $slug .= '-' . ($latest_id);
+
+    // Thực hiện truy vấn nếu các trường không rỗng
+    if ($tieu_de && $id_benh && $content) {
+      $query = "INSERT INTO admin_baiviet (title, slug, content, id_benh, id_khoa, created_at, tieu_de, keyword, descriptions, user_id, img)
+                  VALUES ('$title', '$slug', '$content', '$id_benh', '$id_khoa', '$created_at', '$tieu_de', '$keyword', '$description', '" . Session::get('id') . "', '$img')";
       $result = $this->db->insert($query);
 
-      if ($result) {
-        return array('status' => 'success', 'message' => 'Thêm bài viết thành công!');
-      } else {
-        return array('status' => 'error', 'message' => 'Thêm bài viết thất bại!');
-      }
-    } else {
-      return array('status' => 'error', 'message' => 'Các trường tiêu đề, chọn bênh, nội dung không được bổ trống!');
+      return $result
+        ? ['status' => 'success', 'message' => 'Thêm bài viết thành công!']
+        : ['status' => 'error', 'message' => 'Thêm bài viết thất bại!'];
     }
+
+    return ['status' => 'error', 'message' => 'Các trường tiêu đề, chọn bênh, nội dung không được bổ trống!'];
   }
 
   public function getAll()
@@ -167,22 +161,26 @@ $query = "SELECT COUNT(*) AS total FROM admin_baiviet WHERE id_benh = ' $id_benh
     $keyword = mysqli_real_escape_string($this->db->link, $data['keyword']);
     $description = mysqli_real_escape_string($this->db->link, $data['description']);
     $slug = mysqli_real_escape_string($this->db->link, $data['slug']);
+    $selectedImage = mysqli_real_escape_string($this->db->link, $data['selectedImage']);
 
-    //kiểm tra hình ảnh và lấy hình ảnh cho vào folder uploads
-    $permited = array('jpg', 'jpeg', 'png', 'gif');
-    $file_name = $_FILES['image']['name'];
-    $file_size = $_FILES['image']['size'];
-    $file_temp = $_FILES['image']['tmp_name'];
 
-    $div = explode('.', $file_name);
-    $file_ext = strtolower(end($div));
-    $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
-    $uploaded_image = "uploads/" . $unique_image;
+
+    // Xử lý hình ảnh nếu có
+    $img = $selectedImage; // Mặc định là hình ảnh đã chọn trước đó
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+      $file_name = $_FILES['image']['name'];
+      $file_temp = $_FILES['image']['tmp_name'];
+      $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+      $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
+      $uploaded_image = "uploads/" . $unique_image;
+      move_uploaded_file($file_temp, $uploaded_image);
+      $img = $unique_image; // Cập nhật với hình ảnh mới
+    }
 
     if ($tieu_de !== '' && $id_benh !== '' && $content !== '') {
 
 
-      if (empty($file_name)) {
+      if (empty($img)) {
         $query = "UPDATE admin_baiviet SET 
              tieu_de = '$tieu_de' ,
              id_benh = '$id_benh' ,
@@ -193,7 +191,6 @@ $query = "SELECT COUNT(*) AS total FROM admin_baiviet WHERE id_benh = ' $id_benh
              descriptions = '$description' 
            WHERE id = '$id'";
       } else {
-        move_uploaded_file($file_temp, $uploaded_image);
         $query = "UPDATE admin_baiviet SET 
         tieu_de = '$tieu_de' ,
         id_benh = '$id_benh' ,
@@ -202,7 +199,7 @@ $query = "SELECT COUNT(*) AS total FROM admin_baiviet WHERE id_benh = ' $id_benh
         title = '$title' ,
         keyword = '$keyword' ,
         descriptions = '$description' ,
-         img = '$unique_image'
+         img = '$img'
       WHERE id = '$id'";
       }
       $result = $this->db->update($query);

@@ -13,7 +13,33 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 $local = 'http://localhost/haumontructrang.phongkhamdakhoanhatviet.vn';
 // $local = 'https://haumontructrang.phongkhamdakhoanhatviet.vn/';
 ?>
+<?php
+function getImagesFromFolder($folderPath) {
+    $images = [];
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+    // Mở thư mục
+    if ($handle = opendir($folderPath)) {
+        while (false !== ($file = readdir($handle))) {
+            // Bỏ qua các thư mục đặc biệt
+            if ($file != '.' && $file != '..') {
+                $filePath = $folderPath . '/' . $file;
+                $fileExtension = pathinfo($filePath, PATHINFO_EXTENSION);
 
+                // Kiểm tra nếu tệp là hình ảnh
+                if (in_array(strtolower($fileExtension), $allowedExtensions)) {
+                    $images[] = $filePath;
+                }
+            }
+        }
+        closedir($handle);
+    }
+    return $images;
+}
+
+$uploadDir = 'uploads';
+$images = getImagesFromFolder($uploadDir);
+
+?>
 <?php
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");

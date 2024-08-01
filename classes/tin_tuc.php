@@ -27,38 +27,37 @@ class news
         $keyword = mysqli_real_escape_string($this->db->link, $data['keyword']);
         $description = mysqli_real_escape_string($this->db->link, $data['description']);
         $slug = mysqli_real_escape_string($this->db->link, $data['slug']);
+        $selectedImage = mysqli_real_escape_string($this->db->link, $data['selectedImage']);
         $created_at = $this->fm->created_at();
-
-        //kiểm tra hình ảnh và lấy hình ảnh cho vào folder uploads
-        $permited = array('jpg', 'jpeg', 'png', 'gif');
-        $file_name = $_FILES['image']['name'];
-        $file_size = $_FILES['image']['size'];
-        $file_temp = $_FILES['image']['tmp_name'];
-
-        $div = explode('.', $file_name);
-        $file_ext = strtolower(end($div));
-        $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
-        $uploaded_image = "uploads/" . $unique_image;
-
-
-        //đếm số lượng bài viét
-        $latest_baiviet_query = "SELECT id FROM `admin_tintuc` ORDER BY id DESC LIMIT 1";
-        $result_latest_baiviet = $this->db->select($latest_baiviet_query);
-
-        $latest_id = 0;
-        if ($result_latest_baiviet) {
-            $latest_baiviet = $result_latest_baiviet->fetch_assoc();
-            $latest_id = $latest_baiviet['id'];
-        }
-        $user_id = Session::get('id');
-
-        $slug = $slug . '-' . ($latest_id);
-
-        if ($tieu_de !== '' && $content !== '') {
+    
+        // Initialize variables
+        $img = $selectedImage; // Mặc định là hình ảnh đã chọn trước đó
+        $uploaded_image = '';
+        $file_temp = '';
+    
+        // Xử lý hình ảnh nếu có
+        if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+            $file_name = $_FILES['image']['name'];
+            $file_temp = $_FILES['image']['tmp_name'];
+            $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+            $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
+            $uploaded_image = "uploads/" . $unique_image;
             move_uploaded_file($file_temp, $uploaded_image);
-            $query = "INSERT INTO admin_tintuc (title,slug,content,tieu_de,keyword,descriptions,user_id,img,created_at) VALUE('$title','$slug','$content','$tieu_de','$keyword','$description','$user_id','$unique_image','$created_at') ";
+            $img = $unique_image; // Cập nhật với hình ảnh mới
+        }
+    
+        // Lấy ID bài viết mới nhất và tạo slug
+        $latest_id_query = "SELECT id FROM `admin_tintuc` ORDER BY id DESC LIMIT 1";
+        $latest_id_result = $this->db->select($latest_id_query);
+        $latest_id = ($latest_id_result && $latest_id_result->num_rows > 0)
+            ? $latest_id_result->fetch_assoc()['id']
+            : 0;
+        $slug .= '-' . ($latest_id);
+    
+        if ($tieu_de !== '' && $content !== '') {
+            $query = "INSERT INTO admin_tintuc (title,slug,content,tieu_de,keyword,descriptions,user_id,img,created_at) VALUE('$title','$slug','$content','$tieu_de','$keyword','$description','" . Session::get('id') . "','$img','$created_at') ";
             $result = $this->db->insert($query);
-
+    
             if ($result) {
                 return array('status' => 'success', 'message' => 'Thêm tin tức thành công!');
             } else {
@@ -79,22 +78,24 @@ class news
         $keyword = mysqli_real_escape_string($this->db->link, $data['keyword']);
         $description = mysqli_real_escape_string($this->db->link, $data['description']);
         $slug = mysqli_real_escape_string($this->db->link, $data['slug']);
+        $selectedImage = mysqli_real_escape_string($this->db->link, $data['selectedImage']);
 
-        //kiểm tra hình ảnh và lấy hình ảnh cho vào folder uploads
-        $permited = array('jpg', 'jpeg', 'png', 'gif');
-        $file_name = $_FILES['image']['name'];
-        $file_size = $_FILES['image']['size'];
-        $file_temp = $_FILES['image']['tmp_name'];
-
-        $div = explode('.', $file_name);
-        $file_ext = strtolower(end($div));
-        $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
-        $uploaded_image = "uploads/" . $unique_image;
+      // Xử lý hình ảnh nếu có
+    $img = $selectedImage; // Mặc định là hình ảnh đã chọn trước đó
+    if (isset($_FILES['image']) && $_FILES['image']['error'] == UPLOAD_ERR_OK) {
+      $file_name = $_FILES['image']['name'];
+      $file_temp = $_FILES['image']['tmp_name'];
+      $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+      $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
+      $uploaded_image = "uploads/" . $unique_image;
+      move_uploaded_file($file_temp, $uploaded_image);
+      $img = $unique_image; // Cập nhật với hình ảnh mới
+    }
 
         if ($tieu_de !== '' && $content !== '') {
 
 
-            if (empty($file_name)) {
+            if (empty($img)) {
                 $query = "UPDATE admin_tintuc SET 
                 tieu_de = '$tieu_de' ,
             
@@ -104,7 +105,7 @@ class news
                 descriptions = '$description' 
                 WHERE id = '$id'";
             } else {
-                move_uploaded_file($file_temp, $uploaded_image);
+              
                 $query = "UPDATE admin_tintuc SET 
                 tieu_de = '$tieu_de' ,
             
@@ -112,7 +113,7 @@ class news
                 title = '$title' ,
                 keyword = '$keyword' ,
                 descriptions = '$description' ,
-                img = '$unique_image'
+                img = '$img'
                 WHERE id = '$id'";
             }
             $result = $this->db->update($query);
