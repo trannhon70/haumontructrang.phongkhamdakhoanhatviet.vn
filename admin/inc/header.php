@@ -11,7 +11,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 }
 
 $local = 'http://localhost/haumontructrang.phongkhamdakhoanhatviet.vn';
-// $local = 'https://haumontructrang.phongkhamdakhoanhatviet.vn/';
+// $local = 'https://haumontructrang.phongkhamdakhoanhatviet.vn';
 ?>
 <?php
 function getImagesFromFolder($folderPath) {
