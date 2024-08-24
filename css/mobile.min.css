@@ -419,7 +419,7 @@
     }
     .view{
         text-align: center !important;
-        width: 370px !important;
+        width: 100% !important;
         height: 226px !important;
     }
     .view_button {
