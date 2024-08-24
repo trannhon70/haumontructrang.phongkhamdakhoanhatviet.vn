@@ -45,12 +45,12 @@
 }
 
 .index-item{
-    background-color: #27BAE9;
+    background-color: #5EBEFF;
     padding: 10px;
     margin: 3px;
     border-radius: 50%;
 }
 
 .active{
-    background-color: #008DBA;
+    background-color: #0077C8;
 }

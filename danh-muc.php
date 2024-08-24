@@ -3,8 +3,8 @@ include 'inc/header.php';
 
 
 // Lấy URL hiện tại
-$current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-// $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+// $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 $url_parts = parse_url($current_url);
 
@@ -20,20 +20,20 @@ if (isset($path_parts[1])) {
     $id_page = 1;
 }
 
-if (isset($path_parts[2])) {
-    $file_slug = $path_parts[2];
-    $id_slug = explode('.', basename($file_slug))[0];
-
-    $get_post_detail = $bai_viet->getBaiViet_bySlug($id_slug);
-
-}
-
-// if(isset($path_parts[1])){
-//      $file_slug = $path_parts[1];   
-
+// if (isset($path_parts[2])) {
+//     $file_slug = $path_parts[2];
 //     $id_slug = explode('.', basename($file_slug))[0];
+
 //     $get_post_detail = $bai_viet->getBaiViet_bySlug($id_slug);
+
 // }
+
+if(isset($path_parts[1])){
+     $file_slug = $path_parts[1];   
+
+    $id_slug = explode('.', basename($file_slug))[0];
+    $get_post_detail = $bai_viet->getBaiViet_bySlug($id_slug);
+}
 
 ?>
 <style>
@@ -47,7 +47,7 @@ if (isset($path_parts[2])) {
         width: 200px;
 
         border: 2px solid transparent;
-        border-color: #0DCAF3;
+        border-color: #0077C8;
         border-image-slice: 1;
         border-radius: 20px;
     }
@@ -99,7 +99,8 @@ if (isset($path_parts[2])) {
         text-transform: uppercase;
         line-height: 53px;
         background-color: #28BBEA;
-        background-image: linear-gradient(to right, #28BBEA, #0491BE);
+        background: linear-gradient(270deg, #5EBEFF 0%, #0077C8 100%);
+
         width: 190px;
         color: white;
         border: none;
@@ -123,8 +124,8 @@ if (isset($path_parts[2])) {
         line-height: 53px;
         background-color: white;
         width: 190px;
-        color: #28BBEA;
-        border: 2px solid #28BBEA;
+        color: #0077C8;
+        border: 2px solid #0077C8;
         border-radius: 30px;
         margin-left: 10%;
         justify-content: center;

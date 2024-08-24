@@ -12,14 +12,14 @@
         z-index: 700;
         /* position: fixed; */
         border-radius: 40px;
-        border: 3px solid #0DCAF3;
+        border: 3px solid #0077C8;
         padding: 15px 40px;
     }
 
     .form-chat-title {
         font-size: 24px;
         font-weight: 700;
-        color: #0DCAF3;
+        color: #0077C8;
         text-align: center;
         text-transform: uppercase;
     }
@@ -38,20 +38,21 @@
         padding: 5px 20px;
         font-weight: 600;
         color: #999;
-        border: 2px solid #0DCAF3;
+        border: 2px solid #0077C8;
         font-style: italic;
     }
 
     .form-chat-input input:focus {
-        border: 3px solid #0DCAF3;
-        border-color: #0DCAF3;
+        border: 3px solid #0077C8;
+        border-color: #0077C8;
     }
 
     .form-chat-input-button {
         width: 50%;
         border-radius: 25px;
-        background-color: #0DCAF3;
-        background-image: linear-gradient(to right, #0DCAF3, #209dc3);
+        background-color: #0077C8;
+        background: linear-gradient(270deg, #5EBEFF 0%, #0077C8 100%);
+
         color: white;
         font-size: 21px;
         font-weight: 700;
@@ -64,7 +65,8 @@
 
     .form-chat-input-button:hover {
         transition: 0.5s;
-        background-image: linear-gradient(to right, #0e4758, #209dc3);
+        background: linear-gradient(270deg, #2a83bf 0%, #0077C8 100%);
+
     }
 
     .form-chat-input-button:focus {

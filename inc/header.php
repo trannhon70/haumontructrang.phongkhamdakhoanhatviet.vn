@@ -35,8 +35,8 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 
-$local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
-// $local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
+// $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
+$local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
 
 
 ?>
@@ -105,7 +105,7 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
 
         .dropdown_menu_body {
             border-top: 4px solid #edefef;
-            background-color: #0DCAF3;
+            background-color: #0077C8;
             color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 15px;
@@ -129,7 +129,7 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
         }
 
         .dropdown_menu_body_ul_li:hover {
-            background-color: rgba(0, 216, 216, 1);
+            background-color: #004F85;
             transition: 0.5s;
             color: white;
         }
@@ -158,9 +158,10 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
         }
 
         .active_menu_tab {
-            color: #008DBA;
+            color: #0077C8;
             transition: 0.5s;
-            background-color: #23dee448;
+            background: #0077C833;
+
         }
     </style>
 </head>
@@ -276,9 +277,9 @@ $sessionkhoa = Session::get('khoa');
                 </div>
             </div>
         </div>
-        <div style="background-color: #0DCAF3;">
+        <div style="background-color: #0077C8;">
 
-            <div style="background-color: #0DCAF3;" class="container header_bottom">
+            <div style="background-color: #0077C8;" class="container header_bottom">
                 <a href="<?php echo $local ?>/index.html" class="header_bottom_icon">
                     <img height="auto" width="35px" src="<?php echo $local ?>/images/icons/icon_home.webp" alt="...">
                 </a>

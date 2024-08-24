@@ -45,12 +45,12 @@
         width: 83%;
         min-height: 300px;
         border-radius: 15px;
-        border: 2px solid #B5FBFC;
+        border: 2px solid #0077C8;
         padding: 10px 10px;
         margin: auto;
     }
     .form-chat-mobile-title{
-        color: #208CAF;
+        color: #0077C8;
         font-size: 18px;
         font-weight: 700;
         text-align: center;
@@ -71,20 +71,20 @@
         padding: 5px 10px;
         font-weight: 600;
         color: #999;
-        border: 2px solid #B5FBFC;
+        border: 2px solid #0077C8;
         font-style: italic;
     }
 
     .form-chat-mobile-input input:focus {
-        border: 3px solid #B5FBFC;
-        border-color: #B5FBFC;
+        border: 3px solid #0077C8;
+        border-color: #0077C8;
     }
     .form-chat-mobile-input-button{
         width: 60%;
         border-radius: 8px;
-        background-color: #A1FCFE;
-        background-image: linear-gradient(to right, #A1FCFE, #50e2e7);
-        color: #208CAF;
+        background-color: #0077C8;
+        background-image: linear-gradient(to right, #0077C8, #5EBEFF );
+        color: white;
         font-size: 20px;
         font-weight: 700;
         text-align: center;

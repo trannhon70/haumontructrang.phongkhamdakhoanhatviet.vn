@@ -4,8 +4,8 @@ $getAllLimit = $tin_tuc->getAllLimitTinTuc();
 $getOneLimit = $tin_tuc->getOneLimitTinTuc();
 
 // Lấy URL hiện tại
-$current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-// $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+// $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
 $url_parts = parse_url($current_url);
@@ -14,23 +14,23 @@ $path = $url_parts['path'];
 
 $path_parts = explode('/', trim($path, '/'));
 
-if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
-    $file_name = $path_parts[1];
-    $slugTinTuc = explode('.', basename($file_name))[0];
-    // Kiểm tra nếu $file_name không phải là 'tin-tuc-y-khoa.html'
-    if ($file_name !== 'tin-tuc-y-khoa.html') {
-        $getByIdTT = $tin_tuc->getByslug_tintuc($slugTinTuc);
-    }
-}
-
-// if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
-//     $file_name = $path_parts[0];
+// if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
+//     $file_name = $path_parts[1];
 //     $slugTinTuc = explode('.', basename($file_name))[0];
 //     // Kiểm tra nếu $file_name không phải là 'tin-tuc-y-khoa.html'
 //     if ($file_name !== 'tin-tuc-y-khoa.html') {
 //         $getByIdTT = $tin_tuc->getByslug_tintuc($slugTinTuc);
 //     }
 // }
+
+if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
+    $file_name = $path_parts[0];
+    $slugTinTuc = explode('.', basename($file_name))[0];
+    // Kiểm tra nếu $file_name không phải là 'tin-tuc-y-khoa.html'
+    if ($file_name !== 'tin-tuc-y-khoa.html') {
+        $getByIdTT = $tin_tuc->getByslug_tintuc($slugTinTuc);
+    }
+}
 
 ?>
 
@@ -53,7 +53,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
         width: 200px;
 
         border: 2px solid transparent;
-        border-color: #067579;
+        border-color: #0077C8;
         border-image-slice: 1;
         border-radius: 20px;
     }
@@ -206,9 +206,9 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
     }
 
     .active_menu_tab {
-        color: #008DBA;
+        color: #0077C8;
         transition: 0.5s;
-        background-color: #23dee448;
+        background-color: #0077C8;
     }
 
     .chinh-sua {
@@ -231,7 +231,7 @@ if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
         font-size: 23px;
         font-weight: 700;
         text-transform: uppercase;
-        background-color: #008DBA;
+        background-color: #0C80CF;
         padding: 10px 15px;
     }
 

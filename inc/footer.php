@@ -38,7 +38,7 @@
             <img style="width: 100%;" src="<?php echo $local ?>/images/logo/logo2.webp" alt="...">
 
             <div class="f_size_20 f_weight_700 color_success mt-3">
-                <span style="border-bottom: 3px solid; border-color: #02C7F2 ;">GIỜ LÀM VIỆC</span>
+                <span style="border-bottom: 3px solid; border-color: #0077C8 ;">GIỜ LÀM VIỆC</span>
             </div>
             <div class="  ">
                 <div class="color_success f_size_20 f_weight_700">8:00 - 20:00
@@ -47,7 +47,7 @@
                     kể cả ngày lễ</div>
             </div>
             <div class="f_size_20 f_weight_700 color_success w_100 mt-3">
-                <span clas style="border-bottom: 3px solid; border-color: #02C7F2;">THÔNG TIN LIÊN HỆ</span>
+                <span clas style="border-bottom: 3px solid; border-color: #0077C8;">THÔNG TIN LIÊN HỆ</span>
             </div>
             <div class="flex mt-2 w_100">
                 <div class="w_10 flex item_center justify_center ">
@@ -92,7 +92,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #02C7F2; margin-top: 20px; " >Copy right @JV Nhật Việt</div>
+    background: #0077C8; margin-top: 20px; font-weight: 700; color: white; font-size: 20px; " >Copy right @JV Nhật Việt</div>
     </div>
 </section>
 <!-- footer mobile -->
