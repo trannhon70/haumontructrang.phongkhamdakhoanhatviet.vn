@@ -4,8 +4,8 @@ $getAllLimit = $tin_tuc->getAllLimitTinTuc();
 $getOneLimit = $tin_tuc->getOneLimitTinTuc();
 
 // Lấy URL hiện tại
-// $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+// $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
 $url_parts = parse_url($current_url);
@@ -14,23 +14,23 @@ $path = $url_parts['path'];
 
 $path_parts = explode('/', trim($path, '/'));
 
-// if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
-//     $file_name = $path_parts[1];
-//     $slugTinTuc = explode('.', basename($file_name))[0];
-//     // Kiểm tra nếu $file_name không phải là 'tin-tuc-y-khoa.html'
-//     if ($file_name !== 'tin-tuc-y-khoa.html') {
-//         $getByIdTT = $tin_tuc->getByslug_tintuc($slugTinTuc);
-//     }
-// }
-
-if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
-    $file_name = $path_parts[0];
+if (isset($path_parts[1]) && $path_parts[1] !== 'tin-tuc-y-khoa') {
+    $file_name = $path_parts[1];
     $slugTinTuc = explode('.', basename($file_name))[0];
     // Kiểm tra nếu $file_name không phải là 'tin-tuc-y-khoa.html'
     if ($file_name !== 'tin-tuc-y-khoa.html') {
         $getByIdTT = $tin_tuc->getByslug_tintuc($slugTinTuc);
     }
 }
+
+// if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
+//     $file_name = $path_parts[0];
+//     $slugTinTuc = explode('.', basename($file_name))[0];
+//     // Kiểm tra nếu $file_name không phải là 'tin-tuc-y-khoa.html'
+//     if ($file_name !== 'tin-tuc-y-khoa.html') {
+//         $getByIdTT = $tin_tuc->getByslug_tintuc($slugTinTuc);
+//     }
+// }
 
 ?>
 
@@ -230,7 +230,7 @@ if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
         color: white;
         font-size: 23px;
         font-weight: 700;
-        text-transform: uppercase;
+        text-transform: capitalize;
         background-color: #0C80CF;
         padding: 10px 15px;
     }
@@ -469,12 +469,12 @@ if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
         for (let i = 0; i < h2Elements?.length; i++) {
             h2Elements[i].style.color = '#0060A7';
             h2Elements[i].style.fontWeight = '700';
-            h2Elements[i].style.fontSize = '25px';
+            h2Elements[i].style.fontSize = '23px';
             h2Elements[i].style.textTransform = 'capitalize';
             // h2Elements[i].style.marginLeft = '10px';
             h2Elements[i].style.background = 'url("<?php echo $local ?>/images/icons/icon_cong.webp") no-repeat left center';
-            h2Elements[i].style.backgroundSize = '30px 30px';
-            h2Elements[i].style.paddingLeft = '35px';
+            h2Elements[i].style.backgroundSize = '23px 23px';
+            h2Elements[i].style.paddingLeft = '25px';
 
         }
 
@@ -487,8 +487,8 @@ if (isset($path_parts[0]) && $path_parts[0] !== 'tin-tuc-y-khoa') {
             h3Element[i].style.textTransform = 'capitalize';
             // h3Element[i].style.marginLeft = '10px';
             h3Element[i].style.background = 'url("<?php echo $local ?>/images/icons/icon_mui.gif") no-repeat left center';
-            h3Element[i].style.backgroundSize = '23px 23px';
-            h3Element[i].style.paddingLeft = '35px';
+            h3Element[i].style.backgroundSize = '21px 21px';
+            h3Element[i].style.paddingLeft = '25px';
         }
     }
 </script>
