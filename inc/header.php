@@ -35,8 +35,8 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 
-// $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
-$local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
+$local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
+// $local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
 
 
 ?>

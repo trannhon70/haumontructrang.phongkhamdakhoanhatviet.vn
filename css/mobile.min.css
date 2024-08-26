@@ -300,8 +300,8 @@
         width: 100%;
     }
     .footer_mobile_call_left_body{
-        background-color: #1f9ec5;
-        background-image: linear-gradient(to right, #1f9ec5, #1f9ec5);
+        background-color: #005E9E;
+        background-image: linear-gradient(to right, #005E9E, #005E9E);
         width: 100%;
         height: 70px;
         text-align: center;
@@ -373,8 +373,8 @@
 
     }
     .footer_mobile_call_right_body{
-        background-color: #1f9ec5;
-        background-image: linear-gradient(to right, #1f9ec5, #1f9ec5);
+        background-color: #005E9E;
+        background-image: linear-gradient(to right, #005E9E, #005E9E);
         width: 100%;
         height: 70px;
         text-align: center;
@@ -537,8 +537,8 @@
     position: relative;
     width: 100%;
     height: 50px;
-    background-image: linear-gradient(to right, #1f9ec5, #1f9ec5);
-   border-bottom: 1px solid white;
+    background-image: linear-gradient(to right, #005E9E, #005E9E);
+    border-bottom: 1px solid white;
     
 }
 .header_mobile_top_bg{
@@ -589,7 +589,7 @@
 
 .header_mobile_top_body>button{
     z-index: 10;
-    background-color: #1c8585;
+    background-color: #5EBEFF;
     
     color: white;
     font-size: 12px;
@@ -725,7 +725,7 @@
     height: 100vh;
     width: 280px;
     z-index: 1000;
-    background-color:#0e97b5;
+    background-color:#005E9E;
     backdrop-filter: blur(10px);
     box-shadow: -10px 0 10px rgb(0,0,0,0.1);
     color: white;
@@ -810,7 +810,7 @@
     width: 100%;
     font-size: 15px;
     font-weight: 700;
-    color: #0e97b5;
+    color: #005E9E;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -830,7 +830,7 @@
 .sidebar_mobile_li_ul_li_benh>li{
     width: 100%;
     padding: 3px 10px;
-    border-bottom: 1px solid #0e97b5;
+    border-bottom: 1px solid #005E9E;
 }
 
 .sidebar_mobile_li_ul_li_benh>li:hover{
@@ -844,7 +844,7 @@
     width: 100%;
     font-size: 14px;
     font-weight: 600;
-    color: #0e97b5;
+    color: #005E9E;
     text-decoration: none;
     text-transform: capitalize;
 }
