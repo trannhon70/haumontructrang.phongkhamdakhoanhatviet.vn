@@ -35,8 +35,8 @@ header("Pragma: no-cache");
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: max-age=2592000");
 
-$local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
-// $local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
+// $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
+$local ='https://haumontructrang.phongkhamdakhoanhatviet.vn'
 
 
 ?>
@@ -47,8 +47,8 @@ $local = '/haumontructrang.phongkhamdakhoanhatviet.vn';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Phòng khám đa khoa chuyên điều trị bệnh nam khoa, bệnh xã hội, da liễu, hậu môn - trực tràng uy tính tại thành phố Hồ Chí Minh">
-    <title>Phòng khám đa khoa</title>
+    <meta name="description" content="Phòng khám Nhật việt chuyên điều trị bệnh nam khoa, bệnh xã hội, da liễu, hậu môn - trực tràng uy tính tại thành phố Hồ Chí Minh">
+    <title>Phòng khám Nhật Việt</title>
     <link rel="icon" href="<?php echo $local ?>/images/icons/icon_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo $local ?>/css/toastr.min.css" />
     <link rel="stylesheet" href="<?php echo $local ?>/css/slide.min.css" />
@@ -287,43 +287,16 @@ $sessionkhoa = Session::get('khoa');
                 <div class="header_bottom_dm">
 
                     <a class="header_bottom_gt_a" href="#">hậu môn - trực tràng</a>
-                    <div class="dropdown_menu">
+                    <!-- <div class="dropdown_menu">
                         <div style="height: 10px;"></div>
                         <div class="dropdown_menu_body">
-                            <!-- <ul class="dropdown_menu_body_ul">
-                                <h5 class="dropdown_menu_body_ul_li_h5">Nam khoa</h5>
-                                <?php foreach ($MenuNamkhoa as $value) :
-                                    $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-
-                                    <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>">
-
-                                        <a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?></a>
-
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul> -->
-                        <!-- <ul class="dropdown_menu_body_ul">
-                                <h5 class="dropdown_menu_body_ul_li_h5">da liễu</h5>
-                                <?php foreach ($MenuDaLieu as $value) : $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-                                    <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?> </a></li>
-                                <?php endforeach; ?>
-                            </ul> -->
-                            <!-- <ul class="dropdown_menu_body_ul">
-                                <h5 class="dropdown_menu_body_ul_li_h5">bệnh xã hội</h5>
-                                <?php foreach ($MenuBXH as $value) : $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-                                    <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?> </a></li>
-                                <?php endforeach; ?>
-                            </ul> -->
                                 <ul class="dropdown_menu_body_ul">
-                                <!-- <h5 class="dropdown_menu_body_ul_li_h5">hậu môn - trực tràng</h5> -->
                                 <?php foreach ($MenuHM as $value) : $activeClass = ($value['slug'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
                                     <li onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;" class="dropdown_menu_body_ul_li <?php echo $activeClass; ?>"><a class="dropdown_menu_body_ul_li_a" href="<?php echo $local . $value['link'] ?>"><?php echo $value['name'] ?></a></li>
                                 <?php endforeach; ?>
                             </ul> 
-
                         </div>
-
-                    </div>
+                    </div> -->
 
                 </div>
                 <div style="position: relative;" class="header_bottom_gk"><a class="header_bottom_gt_a" href="<?php echo $local ?>/tin-tuc-y-khoa.html">tin tức y khoa</a>

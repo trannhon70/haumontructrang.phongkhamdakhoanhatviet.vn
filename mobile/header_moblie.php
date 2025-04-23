@@ -51,55 +51,7 @@
                         <span>danh mục bệnh</span>
                         <img style="padding-left: 77px; margin-bottom: 7px; " src="<?php echo $local ?>/images/icons/icon_down.png" alt="">
                     </span>
-                    <ul class="sidebar_mobile_li_ul">
-                        <!-- <li class="sidebar_mobile_li_ul_li  ">
-                            <span onclick="showShelectOptionBenh(); return true;" style="display: flex; align-items: center; justify-content: space-between; ">
-                                <span>Nam khoa</span>
-                                <img style=" margin-bottom: 9px; padding-top: 9px; width: 10px; " src="<?php echo $local ?>/images/icons/add.webp" alt="">
-                            </span>
-
-                            <ul class="sidebar_mobile_li_ul_li_benh">
-                                <?php foreach ($MenuNamkhoa as $value) :
-                                    $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-                                    <li class="<?php echo $activeClass; ?>" onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;">
-                                        <a href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?></a>
-                                    </li>
-                                <?php endforeach; ?>
-
-                            </ul>
-                        </li> -->
-                         <!-- <li class="sidebar_mobile_li_ul_li  ">
-                            <span onclick="showShelectOptionBenh();return true;" style="display: flex; align-items: center; justify-content: space-between; ">
-                                <span>da liễu</span>
-                                <img style=" margin-bottom: 9px; padding-top: 9px; width: 10px; " src="<?php echo $local ?>/images/icons/add.webp" alt="">
-                            </span>
-
-                            <ul class="sidebar_mobile_li_ul_li_benh">
-                                <?php foreach ($MenuDaLieu as $value) :
-                                    $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-                                    <li class="<?php echo $activeClass; ?>" onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;">
-                                        <a href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?></a>
-                                    </li>
-                                <?php endforeach; ?>
-
-                            </ul>
-                        </li> -->
-                        <!-- <li class="sidebar_mobile_li_ul_li  ">
-                            <span onclick="showShelectOptionBenh();return true;" style="display: flex; align-items: center; justify-content: space-between; ">
-                                <span>bệnh xã hội</span>
-                                <img style=" margin-bottom: 9px; padding-top: 9px; width: 10px; " src="<?php echo $local ?>/images/icons/add.webp" alt="">
-                            </span>
-
-                            <ul class="sidebar_mobile_li_ul_li_benh">
-                                <?php foreach ($MenuBXH as $value) :
-                                    $activeClass = ($value['id'] === $sessionBenh) ? 'active_menu_tab' : ''; ?>
-                                    <li class="<?php echo $activeClass; ?>" onclick="saveLinkToSession('<?php echo $value['session']; ?>'); return true;">
-                                        <a href="<?php echo $local . $value['link'] ?>"><?php echo $value['title'] ?></a>
-                                    </li>
-                                <?php endforeach; ?>
-
-                            </ul>
-                        </li> -->
+                    <!-- <ul class="sidebar_mobile_li_ul">
                        <li class="sidebar_mobile_li_ul_li  ">
                             <span onclick="showShelectOptionBenh();return true;" style="display: flex; align-items: center; justify-content: space-between; ">
                                 <span>hậu môn - trực tràng </span>
@@ -113,10 +65,9 @@
                                         <a href="<?php echo $local . $value['link'] ?>"><?php echo $value['name'] ?></a>
                                     </li>
                                 <?php endforeach; ?>
-
                             </ul>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
 
                 <li>

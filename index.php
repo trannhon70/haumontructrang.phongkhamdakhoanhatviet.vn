@@ -26,9 +26,9 @@ $dataFake = array(
         'title' => 'PHƯƠNG CHÂM PHÒNG KHÁM', 
         // 'image' => '/images/icons/icon_nam_khoa2.webp', 
         'text' => 'Khoa Hậu Môn - Trực Tràng Phòng Khám JV Nhật Việt chuyên khám và hỗ trợ điều trị các bệnh thường gặp như trĩ, rò hậu môn, apxe hậu môn, nứt kẻ hậu môn,… Hiện nay ngày càng nhiều người mắc các Hậu Môn - Trực Tràng. Chính vì vậy bệnh nhân cần chủ động đi khám tại các cơ sở uy tín để nhanh chóng phát hiện và hỗ trợ điều trị sớm.'),
-    // array('title' => 'DA LIỄU', 'image' => '/images/icons/icon_da_lieu2.webp', 'text' => 'Chuyên khoa Da liễu Phòng khám Đa khoa Nhật Việt là đơn vị đảm nhận chẩn đoán và điều trị các bệnh lý thuộc chuyên ngành Da liễu.'),
-    // array('title' => 'BỆNH XÃ HỘI', 'image' => '/images/icons/icon_benh_xh2.webp', 'text' => 'Đa khoa Nhật Việt là một trong những địa chỉ thăm khám, xét nghiệm và điều trị bệnh xã hội uy tín tại TPHCM được người dân thành phố và khu vực tin chọn.'),
-    // array('title' => 'HẬU MÔN - TRỰC TRÀNG', 'image' => '/images/icons/icon_hm_tt2.webp', 'text' => 'Khoa Hậu môn – Trực tràng Phòng khám Đa khoa Nhật Việt chuyên cung cấp dịch vụ khám chữa toàn diện các bệnh lý hậu môn – trực tràng uy tín.'),
+    // array('title' => 'DA LIỄU', 'image' => '/images/icons/icon_da_lieu2.webp', 'text' => 'Chuyên khoa Da liễu Phòng khám Nhật Việt là đơn vị đảm nhận chẩn đoán và điều trị các bệnh lý thuộc chuyên ngành Da liễu.'),
+    // array('title' => 'BỆNH XÃ HỘI', 'image' => '/images/icons/icon_benh_xh2.webp', 'text' => 'Phòng khám Nhật Việt là một trong những địa chỉ thăm khám, xét nghiệm và điều trị bệnh xã hội uy tín tại TPHCM được người dân thành phố và khu vực tin chọn.'),
+    // array('title' => 'HẬU MÔN - TRỰC TRÀNG', 'image' => '/images/icons/icon_hm_tt2.webp', 'text' => 'Khoa Hậu môn – Trực tràng Phòng khám Nhật Việt chuyên cung cấp dịch vụ khám chữa toàn diện các bệnh lý hậu môn – trực tràng uy tín.'),
 );
 ?>
 
@@ -61,7 +61,7 @@ $dataFake = array(
                     Chúng tôi mang đến
                 </div>
                 <div class="we_bring_body_botom_col_text">
-                    Đa Khoa Nhật Việt luôn nỗ lực để xây dựng một thương hiệu chăm sóc sức khỏe với hàm lượng tri thức, khoa học và công nghệ ở mức cao. Mỗi dịch vụ y tế đều hướng tới tính tiện ích, hiệu quả, có ý nghĩa với cuộc sống và sức khỏe con người.
+                    Phòng khám Nhật Việt luôn nỗ lực để xây dựng một thương hiệu chăm sóc sức khỏe với hàm lượng tri thức, khoa học và công nghệ ở mức cao. Mỗi dịch vụ y tế đều hướng tới tính tiện ích, hiệu quả, có ý nghĩa với cuộc sống và sức khỏe con người.
                 </div>
                 <button class="we_bring_body_botom_col_button">Xem tất cả các dịch vụ của chúng tôi</button>
             </div>
@@ -322,7 +322,7 @@ $dataFake = array(
                     </div>
                 </div>
                 <div class="feedback_container_row_card_bottom">
-                    “Mình bị viêm da cũng khá nặng, đã chữa trị nhiều nơi nhưng không khỏi. Mình biết đến Phòng khám Đa khoa Nhật Việt qua một người bạn. Khi mình đến khám, bác sĩ và nhân viên phòng khám hướng dẫn mình rất chi tiết trong từng hạng mục.”
+                    “Mình bị viêm da cũng khá nặng, đã chữa trị nhiều nơi nhưng không khỏi. Mình biết đến Phòng khám Nhật Việt qua một người bạn. Khi mình đến khám, bác sĩ và nhân viên phòng khám hướng dẫn mình rất chi tiết trong từng hạng mục.”
                 </div>
             </div>
             <div class="feedback_container_row_card ">
@@ -347,7 +347,7 @@ $dataFake = array(
                     </div>
                 </div>
                 <div class="feedback_container_row_card_bottom">
-                “Theo Hải thì chất lượng phòng khám là khỏi chê, đội ngũ nhân viên y, bác sĩ rất thân thiện và nhiệt tình. Thời gian trả kết quả cũng rất nhanh, cái chính là an toàn và bảo mật. Đây là điều mà Hải cảm thấy hài lòng nhất, xin cám ơn Đa khoa Nhật Việt!”
+                “Theo Hải thì chất lượng phòng khám là khỏi chê, đội ngũ nhân viên y, bác sĩ rất thân thiện và nhiệt tình. Thời gian trả kết quả cũng rất nhanh, cái chính là an toàn và bảo mật. Đây là điều mà Hải cảm thấy hài lòng nhất, xin cám ơn Phòng khám Nhật Việt!”
                 </div>
             </div>
             <div class="feedback_container_row_card ">
@@ -372,7 +372,7 @@ $dataFake = array(
                     </div>
                 </div>
                 <div class="feedback_container_row_card_bottom">
-                “Công việc của Hiếu khá bận nên thời gian rảnh rất ít. Do đó Hiếu đã chọn thăm khám nam khoa tại Đa Khoa Nhật Việt qua Đặt hẹn Online.”
+                “Công việc của Hiếu khá bận nên thời gian rảnh rất ít. Do đó Hiếu đã chọn thăm khám nam khoa tại Phòng khám Nhật Việt qua Đặt hẹn Online.”
                 </div>
             </div>
         </div>
